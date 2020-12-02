@@ -31,6 +31,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('feed_back','FeedBackController');
         Route::resource('user','UserController');
         Route::resource('blog','BlogController');
+        Route::resource('layout','LayoutController');
 //        hien thi san pham cua 1 khach hang
         Route::get('/list-products/{id}', 'CustomerController@showProduct');
         Route::resource('detail','DetailController');
@@ -50,6 +51,7 @@ Route::prefix('admin')->group(function () {
         Route::delete('/cu/delete', 'CustomerController@delete');
         Route::delete('/pr/delete', 'ProductController@delete');
         Route::delete('/bg/delete', 'BlogController@delete');
+        Route::delete('/lo/delete', 'LayoutController@delete');
 
         Route::delete('/fb/delete', 'FeedBackController@delete');
         Route::delete('/usrs/delete', 'UserController@destroys');
