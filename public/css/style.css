@@ -1,0 +1,767 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.thum-logo {
+    width: 50px;
+}
+a.this-spot{
+    text-decoration: none;
+}
+.group-arrow a {
+    text-decoration: none;
+    color: white;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+}
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    box-shadow: none;
+}
+.p1 {
+    margin-top: 41%;
+}
+
+.selection {
+    margin-top: 23%;
+}
+
+.arrow li {
+    padding: 0!important;
+}
+
+ul#tabs-nav li {padding:20px;list-style: none;}
+
+ul#tabs-nav li a {
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+ul#tabs-nav li a.atab::before {content: "";width: 40px;height: 40px;background: white;position: absolute;left: -3%;margin-top: 2px;border-radius: 50%;}
+
+.carousel-caption .content-slide h2{
+    animation: title 1s;
+}
+.carousel-caption{
+    top:28%;
+    left: 10%;
+}
+.content-slide.text-left p{
+    animation: des 1s;
+}
+@keyframes des {
+    from {transform: translateX(-100px); opacity: 0;}
+    to {transform: translateX(0);opacity: 1;}
+}
+@keyframes title {
+    from {transform: translateY(-100px); opacity: 0;}
+    to {transform: translateY(0);opacity: 1;}
+}
+body{
+    font-family: Montserrat-Light!important;
+
+}
+.select-section input[type="radio"] {
+    margin-right: 20px;
+}
+
+ul.nav.select-section.d-flex.flex-column li {
+    padding: 20px;
+}
+
+ul.nav.select-section.d-flex.flex-column a {
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+}
+
+.image-upload.d-flex.justify-content-start p {
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+.input-left .fill-input {
+    border: 1px solid white;
+}
+
+.about-right .form-group input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    color: white;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin: 0;
+}
+
+
+input.form-check-input {
+    transform: scale(2);
+}
+
+.section-two input.form-check-input {
+    transform: scale(1.5);
+    margin-top: 10px;
+}
+
+.list-option {
+    padding-left: 24px;
+}
+
+.list-option span {
+    font-size: 15px!important;
+}
+
+button.btn.btn-outline-light.mt-5.btn-send {
+    padding: 7px 30px;
+    border-radius: 21px;
+}
+
+label.form-check-label span {
+    margin-left: 20px;
+}
+
+label.form-check-label {
+    margin-bottom: 4%;
+    color: white;
+}
+
+.form-check input.form-check-input {transform: scale(3.0);margin-top: 2.4%;}
+
+.about-right .form-check {
+    padding-bottom: 27px;
+    font-size: 24px;
+    color: white;
+}
+
+.page-section.pt-5 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.about-left h3 {
+    font-size: 40px;
+    font-family:Montserrat-Bold;
+}
+
+#about-us .section-one,.section-two,.section-three,.section-four {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    left: 0%;
+    color: white;
+    z-index: 1;
+}
+img, media {
+    max-width: 100%;
+}
+body,html{
+    height:100%;
+}
+
+.lang a {
+    color: white;
+    font-weight: 600;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 25px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 14px;
+}
+h4{
+    font-size: 12px;
+}
+.search button.btn.btn-secondary {
+    position: absolute;
+    left: 3px;
+    transform: scale(0.8);
+    border-radius: 50%;
+}
+
+.search form.form-inline.my-2.my-lg-0 {
+    position: relative;
+}
+
+.search input.form-control.mr-sm-2 {
+    border-radius: 20px;
+    padding-left: 44px;
+}
+.menu.fixed-top .container{
+    padding:0!important;
+}
+.tab-menu ul{
+    padding: 0!important;
+}
+.left-menu .search {
+    margin-top: 30px;
+}
+.content-slide h2{
+    font-size: 58px;
+    font-family: Montserrat-Bold;
+}
+@font-face {
+    font-family: Montserrat-Light;
+    src: url('../fonts/Montserrat-ExtraLight.otf');
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../fonts/Montserrat-ExtraBold.otf');
+}
+.menu{
+    height: 100px;
+    width: 100%;
+    line-height: 100px;
+    z-index: 4;
+}
+.logo{
+    width: 200px;
+    height: 100%;
+}
+.logo h3{
+    font-family: Montserrat-Bold;
+    color: white;
+    opacity: 0;
+    transition: 0.6s;
+}
+.logo a{
+    text-decoration: none;
+}
+.logo a:hover h3{
+    opacity: 1;
+}
+.lang{
+    color:white;
+}
+.menu-button i{
+    font-size: 28px;
+    color:white;
+    cursor: pointer;
+    position: relative;
+}
+header#header{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+.carousel-indicators{
+    bottom: 2%;
+}
+.carousel-indicators li{
+    width: 15px!important;
+    height:15px!important;
+    border-radius: 20px;
+    margin-left: 14px!important;
+}
+.scroll-to{
+    position: absolute;
+    right: -4%;
+    top: 44%;
+    width: 13%;
+    height: 3%;
+    color: white;
+    border-bottom: 2px solid white;
+    transform: rotate(90deg);
+    z-index: 1;
+}
+.scroll-to i{
+    cursor: pointer;
+}
+.menu-button{
+    margin-top: 30px!important;
+}
+
+.menu-button span {
+    width: 40px;
+    height: 6px;
+    background: white;
+    margin-top: 9px;
+}
+.menu-button i{
+    cursor: pointer;
+}
+
+.tab-menu{
+    position: fixed;
+    right: -175%;
+    top: 0;
+    height: 100%;
+    z-index: 3;
+    width: 541px;
+    background-color: black;
+    margin-left:300px;
+    padding-top: 80px;
+    transition: 0.2s ease-in-out 0.1s;
+}
+.move-menu{
+    opacity: 1;
+    right: 0;
+}
+.tab-menu i{
+    cursor: pointer;
+}
+.tab-menu ul li{
+    text-align: center;
+    list-style: none;
+    padding: 40px;
+    border-bottom: 1px solid gray;
+    position: relative;
+}
+.tab-menu ul li a::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: white;
+    z-index: -1;
+    transition: 0.3s;
+
+}
+.tab-menu ul li:hover a{
+    color:black;
+    font-family: Montserrat-Bold;
+}
+.tab-menu ul li:hover a::after{
+    animation-name: test;
+    width: 100%;
+
+}
+@keyframes test{
+    from{
+        background-color: chocolate!important;
+    }
+    to{
+        width: 100%!important;
+        background-color: chocolate!important;
+    }
+}
+.tab-menu p{
+    margin-bottom: 0;
+}
+.tab-menu ul li a{
+    font-size: 17px;
+    transition: 0.4s;
+    color: white;
+}
+.tab-menu ul li:hover a{
+    padding-left:20px;
+    font-weight: bold;
+}
+.rotate-right{
+    transform: translateX(0%) translateY(39%) rotate(45deg);
+}
+.rotate-left{
+    transform: translateX(0%) translateY(-203%) rotate(-45deg);
+}
+
+.menu-button .btn1,.btn2{
+    transition: 0.2s;
+}
+/* Css our story */
+.img-story {
+    height: auto;
+    width: 100%;
+    border: 2px solid white;
+    overflow: hidden;
+}
+.story-content p{
+    overflow: auto;
+    height: 80px;
+}
+
+
+.vertical-line{
+    width: 1px;
+    background-color: white;
+    height: 70px;
+    margin-left: 4px;
+}
+
+a.on_top { opacity:0.6; display: none;}
+a.on_top:hover{
+    background-color: #007bb6;
+    color: #fff;
+    border: 1px solid #007bb6;
+    opacity:1;
+}
+a.on_top i{ font-size: 20px;}
+a.on_top {
+    border-radius: 6px;
+    background-color: #333333;
+    padding: 10px 20px;
+    white-space: nowrap; color: #fff;
+    position: fixed;
+    bottom: 75px;
+    right: 30px;
+    height: 44px;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+#our-story{
+    position: relative;
+
+}
+.our-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#about-us{
+    position: relative;
+}
+.about-bg{
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.container.story-content{
+    position: absolute;
+    right: 4%;
+    width: 50%;
+    top: 14%;
+    z-index: 2;
+}
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: DodgerBlue;
+    cursor: pointer;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.lang a:hover{
+    color: gold;
+}
+/* page 3 human of the door */
+#human-of-the-door{
+    position: relative;
+}
+#p3-content{
+    position: absolute;
+    top: 61%;
+    left: 38.5%;
+    width: 35%;
+    height: 30% ;
+}
+.p3-content-p.d-flex.justify-content-center{
+    color: white;
+}
+#human-of-the-door .btn.btn-outline-light.btn-send{
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    border-radius: 21px;
+}
+.item.p3-img{
+    width: 90%;
+    height: 100%;
+}
+#p3-img-size{
+    width: 100%;
+    height: 100%;
+}
+.owl-nav{
+    width: 118%;
+    position: absolute;
+    top: 39%;
+    right: -8%;
+    z-index: 1;
+}
+.owl-prev{
+    size: 5px;
+    float: left;
+}
+.owl-prev:hover{
+    transform: scale(1.2);
+}
+.owl-next{
+    float: right;
+}
+.owl-next:hover{
+    transform: scale(1.2);
+}
+.owl-stage-outer{
+    z-index: 2;
+}
+/* cod page 4 */
+#what{
+    position: relative;
+}
+.what-content{
+    position: absolute;
+    top: 30%;
+    left: 7%;
+    color: white;
+}
+.what-left h3{
+    font-size: 29px;
+    font-family: Montserrat-Bold;
+}
+.brand-box{
+    width: 73%;
+    height: 380px;
+    position: relative;
+}
+.brand-box .info-box{
+    position: absolute;
+    left: 0;
+    bottom: -130px;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+.brand-box:hover .info-box{
+    bottom: 0!important;
+}
+.info-box p.offset{
+    font-size: 40px;
+    font-family: Montserrat-Bold;
+    margin: 0!important;
+}
+.info-box p.title-brand{
+    margin: 0;
+}
+.info-box .bg-brand{
+    position: absolute;
+}
+.info-box .text-brand {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.info-box .bg-brand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #757279;
+    opacity: 0.8;
+    z-index: 1;
+}
+.child-brand{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+a.item{
+    color: white;
+    cursor: pointer;
+}
+/* code page 5 client */
+
+#clients{
+    position: relative;
+}
+.content-client{
+    position: absolute;
+    right: 0;
+    top: 29%;
+    width: 90%;
+    color: white;
+    overflow: hidden;
+}
+.content-client p{
+    color: white;
+}
+.content-client a{
+    text-decoration: none;
+}
+.content-client .img-brand{
+    width: 100px;
+    height: auto;
+}
+p.title-brand{
+    margin-left: 9%;
+}
+.this-spot a{
+    font-size: 23px;
+    text-align: center;
+    color: white;
+}
+.navi-btn i{
+    cursor: pointer;
+}
+
+/* Reponsive code */
+
+/* Code mobile */
+@media (max-width: 575.98px) {
+    h1{
+        font-size: 25px!important;
+    }
+    h2{
+        font-size: 20px!important;
+    }
+    h3{
+        font-size: 16px!important;
+    }
+    h4{
+        font-size: 12px!important;
+    }
+    a,label{
+        font-size: 10px!important;
+    }
+    h4{
+        font-size: 10px!important;
+    }
+    p{
+        font-size: 10px!important;
+    }
+    .menu{
+        background:black;
+        border-bottom: 1px solid white;
+
+    }
+    .thum-logo{
+        width: 50px;
+    }
+    .logo a{
+        display: block;
+        overflow: hidden;
+        text-decoration: none;
+    }
+
+    .menu{
+        height: 64px!important;
+        line-height: 64px!important;
+
+    }
+    header#header{
+        margin-top: 60px;
+    }
+    .menu-button{
+        margin-top: 13px!important;
+        padding-right:9px;
+        transform: scale(0.8);
+        margin-right: 22px;
+    }
+    .content-slide h2{
+        font-size: 20px;
+        padding-bottom: 0!important;
+    }
+    .content-slide P{
+        font-size: 10px;
+    }
+    .carousel-caption{
+        top:6%!important;
+        left: 8%;
+    }
+    .page-number{
+        font-size: 12px;
+    }
+    .story-content p{
+        padding-top: 5px!important;
+        margin-top: 0!important;
+        height: 50px;
+    }
+    #p3-content{
+        top: 54%;
+        left: 25.5%;
+        width: 62%!important;
+        height: 30%;
+        transform: scale(0.7);
+    }
+    .clients-content{
+        top:-42%!important;
+        transform: scale(0.4);
+    }
+    .about-left h3{
+        margin-left: 34px;
+        font-size: 14px!important;
+    }
+    .selection{
+        margin-top:6%;
+    }
+    ul#tabs-nav li a.atab::before{
+        width: 20px;
+        height: 20px;
+    }
+    ul#tabs-nav li{
+        padding:10px;
+    }
+}
+.text-infor{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 32px;
+}
+
+.content-left-text{
+    background-image: url('../img/list-clients/border.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 104px;
+}
+.content-left-text a{text-decoration: none}
+@media (max-width: 575.98px){
+    .text-infor{
+        font-size: 14px;
+        padding-top: 10px;
+    }
+
+}
