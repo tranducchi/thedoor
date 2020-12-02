@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
-@section('category', 'Dịch vụ');
-@section('title', 'Thêm mới');
+@section('category', 'Dịch vụ')
+@section('title', 'Thêm mới')
 @section('content')
     <div class="row">
         <div class="col-lg-8 offset-lg-2">

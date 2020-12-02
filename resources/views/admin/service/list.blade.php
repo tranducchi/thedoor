@@ -1,6 +1,6 @@
-@extends('admin.layouts.master');
-@section('category', 'Dịch vụ');
-@section('title','Danh sách');
+@extends('admin.layouts.master')
+@section('category', 'Dịch vụ')
+@section('title','Danh sách')
 @section('content')
     <div class="row">
         <div class="col-lg-6 offset-lg-3 mb-2">

@@ -19,6 +19,19 @@
                     <a class="nav-link" href="/admin/slide">Danh sách</a>
                 </nav>
             </div>
+              <!-- Slide -->
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#blog"
+              aria-expanded="false" aria-controls="collapseLayouts">
+              <div class="sb-nav-link-icon"><i class="far fa-edit"></i></div>
+              Blog
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+          </a>
+          <div class="collapse" id="blog" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+              <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="/admin/blog/create">Thêm mới</a>
+                  <a class="nav-link" href="/admin/blog">Danh sách</a>
+              </nav>
+          </div>
             <!-- Bo phan -->
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#dept" aria-expanded="false"
                 aria-controls="collapseLayouts">

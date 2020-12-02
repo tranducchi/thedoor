@@ -36,7 +36,7 @@
                             <td>
                                 <img width="150" src="{{asset('storage/img/'.$s->image)}}" alt="">
                             </td>
-                            <td>{{$s->link}}</td>
+                              <td><a href="{{$s->link}}" target="_blank">{{$s->link}}</a></td>
                             <td>
                                 @if($s->active_status == 1)
                                     Hiển thị
