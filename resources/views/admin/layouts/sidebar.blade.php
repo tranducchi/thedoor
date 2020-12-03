@@ -133,45 +133,15 @@
             {{-- Yêu cầu--}}
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#request"
                 aria-expanded="false" aria-controls="collapsePages">
-                <div class="sb-nav-link-icon"><i class="fab fa-accusoft"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>
                 Yêu cầu
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            <div class="collapse" id="request" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#hire"
-                        aria-expanded="false" aria-controls="pagesCollapseError">
-                        Liên hệ
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="hire" aria-labelledby="headingOne"
-                        data-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/admin/hire_us">Danh sách</a>
-                        </nav>
-                    </div>
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#can"
-                        aria-expanded="false" aria-controls="pagesCollapseError">
-                        Trở thành cộng sự
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="can" aria-labelledby="headingOne"
-                        data-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/admin/candidate">Danh sách</a>
-                        </nav>
-                    </div>
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#feed"
-                        aria-expanded="false" aria-controls="pagesCollapseError">
-                        Phản hồi
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="feed" aria-labelledby="headingOne"
-                        data-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/admin/feed_back">Danh sách</a>
-                        </nav>
-                    </div>
+            <div class="collapse" id="request" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="/admin/hire_page">Liên hệ</a>
+                    <a class="nav-link" href="/admin/candidate">Trở thành cộng sự</a>          
+                    <a class="nav-link" href="/admin/feed_back">Phản hồi</a>      
                 </nav>
             </div>
         </div>

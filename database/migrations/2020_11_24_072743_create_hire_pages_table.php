@@ -18,6 +18,7 @@ class CreateHirePagesTable extends Migration
             $table->string('partner_name');
             $table->string('email');
             $table->string('project_name');
+            $table->string('describe_project');
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->integer('budget');

@@ -17,7 +17,8 @@ use App\Http\Controllers\FontendController;
 // });
 Route::get('/',[FontendController::class, 'index']);
 Route::POST('/add_somethingelse',[FontendController::class, 'add_ste']);
-
+Route::get('/add_hire',[FontendController::class, 'add_hire']);
+Route::get('/add_candidate',[FontendController::class, 'add_candidate']);
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.home');
@@ -31,6 +32,8 @@ Route::prefix('admin')->group(function () {
         Route::resource('feed_back','FeedBackController');
         Route::resource('user','UserController');
         Route::resource('blog','BlogController');
+        Route::resource('hire_page','HirePageController');
+        Route::resource('candidate','CandidateController');
 //        hien thi san pham cua 1 khach hang
         Route::get('/list-products/{id}', 'CustomerController@showProduct');
         Route::resource('detail','DetailController');
@@ -54,7 +57,8 @@ Route::prefix('admin')->group(function () {
         Route::delete('/fb/delete', 'FeedBackController@delete');
         Route::delete('/usrs/delete', 'UserController@destroys');
         Route::delete('/dts/delete', 'DetailController@delete');
-
+        Route::delete('/hp/delete', 'HirePageController@delete');
+        Route::delete('/cn/delete', 'CandidateController@delete');
 
 //        End delte multi
         Route::post('/staff/search', 'StaffController@search');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\HirePage;
 class HirePageController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class HirePageController extends Controller
      */
     public function index()
     {
-        //
+        $hire_page = HirePage::select('id', 'partner_name','email', 'project_name', 'describe_project', 'service_id', 'budget', 'delete_status','created_at', 'updated_at')->orderBy('created_at','desc')->paginate(15);
+        return view('admin.hire_page.list', compact('hire_page'));
     }
 
     /**
@@ -35,20 +36,6 @@ class HirePageController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'partner_name' => 'required',
-            'email' => 'required',
-            'project_name' => 'required',
-            'partner_name' => 'required',
-            'service_id' => 'required',
-            'budget' => 'required',
-        ],[
-            'partner_name'=>'Trường tên không được để trống',
-            'email.unique'=>'Email đã tồn tại',
-            'project_name.required'=>'Trường điện thoại không được để trống',
-            'email.required'=>'Trường email không được để trống',
-            'story.required'=>'Trường câu chuyện thoại không được để trống'
-        ]);
        
     }
 
@@ -95,5 +82,12 @@ class HirePageController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function delete(Request $request){
+        $id = $request->id;
+        HirePage::whereIn('id', $id)->update([
+            'delete_status'=>'0'
+        ]);
+        return redirect('/admin/hire_page')->with('success', 'Xóa thành công !');
     }
 }

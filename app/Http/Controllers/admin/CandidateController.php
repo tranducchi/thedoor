@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Candidate;
 class CandidateController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        //
+        $candidate = Candidate::select('id', 'name', 'email', 'project_name', 'introduce', 'dept_id', 'profile', 'delete_status','created_at', 'updated_at')->orderBy('created_at','desc')->paginate(15);
+        return view('admin.candidate.list', compact('candidate'));
     }
 
     /**
@@ -81,5 +82,12 @@ class CandidateController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function delete(Request $request){
+        $id = $request->id;
+        Candidate::whereIn('id', $id)->update([
+            'delete_status'=>'0'
+        ]);
+        return redirect('/admin/candidate')->with('success', 'Xóa thành công !');
     }
 }
