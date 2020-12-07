@@ -137,6 +137,9 @@ class ProductController extends Controller
         //
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/product');
+        }
         $id = $request->id;
         Product::whereIn('id', $id)->update([
             'delete_status'=>'0'

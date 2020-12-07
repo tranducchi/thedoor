@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FontendController;
+use App\Http\Controllers\admin\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,15 +16,15 @@ use App\Http\Controllers\FontendController;
 // Route::get('/', function () {
 //     return view('home');
 // });
+
 Route::get('/',[FontendController::class, 'index']);
-Route::POST('/add_somethingelse',[FontendController::class, 'add_ste']);
-Route::get('/add_hire',[FontendController::class, 'add_hire']);
-Route::get('/add_candidate',[FontendController::class, 'add_candidate']);
+Route::post('/add_somethingelse',[FontendController::class, 'add_ste']);
+Route::post('/add_hire',[FontendController::class, 'add_hire']);
+Route::post('/add_candidate',[FontendController::class, 'add_candidate']);
 Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.home');
-    });
+
     Route::group(['namespace' => 'App\Http\Controllers\admin'], function () {
+        Route::get('/',[AdminController::class,'index']);
         Route::resource('slide', 'SlideController');
         Route::resource('dept','DeptController');
         Route::resource('staff','StaffController');
@@ -32,12 +33,9 @@ Route::prefix('admin')->group(function () {
         Route::resource('feed_back','FeedBackController');
         Route::resource('user','UserController');
         Route::resource('blog','BlogController');
-<<<<<<< HEAD
         Route::resource('hire_page','HirePageController');
         Route::resource('candidate','CandidateController');
-=======
         Route::resource('layout','LayoutController');
->>>>>>> 2a12dea74665f4e882eb21d7fa06c18de5558994
 //        hien thi san pham cua 1 khach hang
         Route::get('/list-products/{id}', 'CustomerController@showProduct');
         Route::resource('detail','DetailController');
@@ -69,9 +67,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/staff/search', 'StaffController@search');
         Route::post('/slide/search', 'SlideController@search');
         Route::post('/detail/search', 'DetailController@search');
+        Route::post('/user/search', 'UserController@search');
     });
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');

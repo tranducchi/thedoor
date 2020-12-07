@@ -123,6 +123,9 @@ class DeptController extends Controller
         return view('admin.dept.search', compact('dept', 'k'));
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/dept');
+        }
         $id = $request->id;
         Dept::whereIn('id', $id)->update([
             'delete_status'=>'0'

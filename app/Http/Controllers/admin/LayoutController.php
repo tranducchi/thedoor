@@ -128,6 +128,9 @@ class LayoutController extends Controller
         return redirect('admin/layout')->with('success', 'Xóa thành công !');
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/layout');
+        }
         $id = $request->id;
         Layout::whereIn('id', $id)->update([
             'delete_status'=>'0'

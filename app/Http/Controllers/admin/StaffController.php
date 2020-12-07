@@ -173,7 +173,9 @@ class StaffController extends Controller
         return view('admin.staff.search', compact('staff', 'k'));
     }
     public function delete(Request $request){
-
+        if($request->id ==null){
+            return redirect('/admin/staff');
+        }
         $id = $request->id;
         Staff::whereIn('id', $id)->update([
             'delete_status'=>'0'

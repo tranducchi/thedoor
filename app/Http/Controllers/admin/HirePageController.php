@@ -84,6 +84,9 @@ class HirePageController extends Controller
         //
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/hire_page');
+        }
         $id = $request->id;
         HirePage::whereIn('id', $id)->update([
             'delete_status'=>'0'

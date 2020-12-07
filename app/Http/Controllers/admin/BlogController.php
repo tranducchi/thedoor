@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::select('id', 'title', 'thumbnail', 'describe', 'delete_status', 'content', 'author', 'created_at')->where('delete_status',1)->orderBy('created_at', 'desc')->paginate(15);
+        $blogs = Blog::select('id', 'title', 'thumbnail', 'describe', 'delete_status', 'content', 'author_id', 'created_at')->where('delete_status',1)->orderBy('created_at', 'desc')->paginate(15);
         return view('admin.blog.list', compact('blogs'));
     }
 
@@ -67,7 +67,7 @@ class BlogController extends Controller
         $blog->describe = $request->describe;
         $blog->thumbnail = $fileNameToStore;
         $blog->content = $request->content;
-        $blog->author = $request->author;
+        $blog->author_id = $request->author;
         $blog->save();
         return redirect('/admin/blog')->with('success', 'Thêm thành công !');
     }
@@ -127,11 +127,12 @@ class BlogController extends Controller
             $path = $request->file('img')->storeAs('/public/img', $fileNameToStore);
             $blog->thumbnail = $fileNameToStore;
         }
+        
         $blog->title = $request->title;
         $blog->slug =Str::slug($request->title);
         $blog->describe = $request->describe;
         $blog->content = $request->content;
-        $blog->author = $request->author;
+        $blog->author_id = $request->author;
         $blog->save();
         return redirect('/admin/blog')->with('success', 'Cập nhật thành công !');
     }
@@ -155,6 +156,9 @@ class BlogController extends Controller
         return view('admin.blog.search', compact('blogs', 'k'));
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/blog');
+        }
         $id = $request->id;
         Blog::whereIn('id', $id)->update([
             'delete_status'=>'0'

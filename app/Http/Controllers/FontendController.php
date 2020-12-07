@@ -10,49 +10,60 @@ use App\Models\Service;
 use App\Models\Dept;
 use App\Models\Staff;
 use App\Models\Candidate;
+use App\Models\Customer;
+use App\Models\Blog;
+use App\Models\Layout;
 class FontendController extends Controller
 {
+
     public function index()
     {
        $slide = Slide::select('image','title','describe','link')->where('active_status',1)->where('delete_status',1)->get();
        $count = Slide::select('*')->where('active_status',1)->where('delete_status',1)->count();
        $serv = Service::select('service_name','id')->where('delete_status',1)->get();
        $sldept = Dept::select('dept_name','id')->where('delete_status',1)->get();
-       return view('home',compact('slide','count','serv','sldept'));
+       $staffs = Staff::select('slug', 'photo')->where('delete_status',1)->orderBy('created_at', 'desc')->get();
+       $customers = Customer::select('id', 'customer_name', 'image')->where('delete_status', 1)->get();
+       $blogs = Blog::select('id', 'author_id', 'title', 'thumbnail', 'slug', 'created_at')->where('delete_status', 1)->orderBy('created_at', 'desc')->take(3)->get();
+       $layouts = Layout::select('link', 'offset')->where('delete_status',1)->get();
+       return view('home',compact('slide','count','serv','sldept', 'customers', 'staffs', 'blogs', 'layouts'));
     }
     public function add_ste(Request $request){
-        // $validatedData = $request->validate([   
-        //     'name' => 'required',
-        //     'email' => 'required',
-        //     'describe' => 'required',
-        // ],[
-        //     'name.required'=>'Trường tên không được để trống',
-        //     'email.required'=>'Trường email không được để trống',
-        //     'describe.required'=>'Trường mô tả không được để trống'
-        // ]);
+        $validatedData = $request->validate([   
+            'name' => 'required',
+            'email' => 'required',
+            'describe' => 'required',
+        ],[
+            'name.required'=>'Trường tên không được để trống',
+            'email.required'=>'Trường email không được để trống',
+            'describe.required'=>'Trường mô tả không được để trống'
+        ]);
         $feedback = new FeedBack; 
         $feedback->sender_name	=$request->name;
         $feedback->email=$request->email;
         $feedback->content_fb=$request->describe;
         $feedback->save();
-        return redirect('/')->with('success', 'Thêm thành công !');
+        return response()->json([
+            'success' => 'Phản hồi thành công !',
+        ],
+        200);
     }
     public function add_hire(Request $request){
-        // $validatedData = $request->validate([
-        //     'partner_name' => 'required',
-        //     'email' => 'required',
-        //     'project_name' => 'required',
-        //     'describe_project' => 'required',
-        //     'service_id'=>'required',
-        //     'budget'=>'required',
-        // ],[
-        //     'partner_name.required' => 'Trường tên không được để trống',
-        //     'email.required' => 'Trường email không được để trống',
-        //     'project_name.required' => 'Trường tên dự án không được để trống',
-        //     'describe_project.required' =>'Trường mô tả không được để trống',
-        //     'service_id.required'=>'Trường dịch vụ không được để trống',
-        //     'budget.required'=>'Trường giá tiền không được để trống',
-        // ]);
+        $validatedData = $request->validate([
+            'partner_name' => 'required',
+            'email' => 'required',
+            'project_name' => 'required',
+            'describe_project' => 'required',
+            'service_id'=>'required',
+            'budget'=>'required',
+        ],[
+            'partner_name.required' => 'Trường tên không được để trống',
+            'email.required' => 'Trường email không được để trống',
+            'project_name.required' => 'Trường tên dự án không được để trống',
+            'describe_project.required' =>'Trường mô tả không được để trống',
+            'service_id.required'=>'Trường dịch vụ không được để trống',
+            'budget.required'=>'Trường giá tiền không được để trống',
+        ]);
         $hire = new HirePage; 
         $hire->partner_name	=$request->partner_name;
         $hire->email=$request->email;
@@ -61,7 +72,10 @@ class FontendController extends Controller
         $hire->service_id=$request->service_id;
         $hire->budget=$request->budget;
         $hire->save();
-        return redirect('/')->with('success', 'Thêm thành công !');
+        return response()->json([
+            'success' => 'Gửi đơn thành công !',
+        ],
+        200);
     }
     public function add_candidate(Request $request){
       

@@ -10247,3 +10247,14 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
     background-color: #e9ecef;
 }
+
+@media screen and (min-width: 676px) {
+    .modal-dialog {
+      max-width: 70%; /* New width for default modal */
+     
+    }
+}
+span.error-form{
+    color:red;
+}
+

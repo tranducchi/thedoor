@@ -116,6 +116,9 @@ class DetailController extends Controller
         return redirect('admin/detail')->with('success', 'Xóa thành công !');
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/detail');
+        }
         $id = $request->id;
         DetailProduct::whereIn('id', $id)->update([
             'delete_status'=>'0'

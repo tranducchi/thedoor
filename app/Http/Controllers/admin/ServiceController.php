@@ -143,6 +143,9 @@ class ServiceController extends Controller
         return redirect('/admin/service')->with('success', 'Xóa thành công ! ');
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/service');
+        }
         $id = $request->id;
         Service::whereIn('id', $id)->update([
             'delete_status'=>'0'

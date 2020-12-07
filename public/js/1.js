@@ -1,6 +1,60 @@
 
 
 $(document).ready(function () {
+    // BUtton hi us
+    $('#hius').on('click', function(e){
+        e.preventDefault()
+        $.ajax({
+            // header:{
+            //     'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            // },
+            url: 'add_hire',
+            data: new FormData($("#form1 form")[0]),
+            contentType: false,
+            processData: false,
+            method: 'post',
+            success: function(data) {
+                toastr.success(data.success)
+                $('#form1 form')[0].reset();
+            },
+            error: function(error) {
+                console.log(error);
+                var errors = error.responseJSON;
+                $.each(errors.errors, function(i, val) {
+                    $("#form2 input[name=" + i + "]").siblings('.error-form').text(val[0]);
+                  
+                })
+            }
+        });
+    });
+    // end hius
+    $('#something').on('click', function(e){
+        e.preventDefault()
+        $.ajax({
+
+            header:{
+                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            },
+            url: 'add_somethingelse',
+            data: new FormData($("#form3")[0]),
+            contentType: false,
+            processData: false,
+            method: 'post',
+            success: function(data) {
+                toastr.success(data.success)
+                $('#form3')[0].reset();
+            },
+            error: function(error) {
+                console.log(error);
+                var errors = error.responseJSON;
+                $.each(errors.errors, function(i, val) {
+                    $("#form3 input[name=" + i + "]").siblings('.error-form').text(val[0]);
+                    $("#form3 textarea").siblings('.error-form').text(val[0]);
+                  
+                })
+            }
+        });
+    });
     $('.three-owl').owlCarousel({
         loop: true,
         margin: 10,
@@ -36,35 +90,42 @@ $(document).ready(function () {
             }
         }
     });
-    
-    $('.one-carousel').owlCarousel({
+// one carousel
+    $('.one-owl').owlCarousel({
+     
         loop: true,
         margin: 10,
         //nav:true,
         //navText: ["<img src='img/p3-pre.png'>","<img src='img/p3-next.png'>"],
         responsive: {
             0: {
-                items: 3
+                items: 3,
+             
             },
             600: {
-                items: 3
+                items: 3,
+             
             },
             1000: {
-                items: 3
+                items: 3,
+            
             }
         }
         
     })
-    var owl = $('.owl-carousel');
+    var owl = $('.one-owl');
     owl.owlCarousel();
+    // Go to the next item
     $('.customNextBtn').click(function() {
         owl.trigger('next.owl.carousel');
+        console.log("next");
     })
     // Go to the previous item
     $('.customPrevBtn').click(function() {
         // With optional speed parameter
         // Parameters has to be in square bracket '[]'
         owl.trigger('prev.owl.carousel', [300]);
+        console.log("preview");
     })
 
     //stop next slide

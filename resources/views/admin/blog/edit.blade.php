@@ -38,7 +38,7 @@
                     </script>
                     @include('ckfinder::setup')
                 </div>
-            <input type="text" value="{{Auth::user()->name}}" name="author" hidden>
+            <input type="text" value="{{Auth::user()->id}}" name="author" hidden>
                 <div class="form-group text-center mt-2">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-sync pr-1"></i>Cập nhật</button>
                 </div>

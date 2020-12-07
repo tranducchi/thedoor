@@ -130,9 +130,17 @@ class UserController extends Controller
         return redirect('/admin/user')->with('success', 'Xoá thành công !');
     }
     public function destroys(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/user');
+        }
         $id = $request->id;
         $user = User::where('id', $id);
         $user->delete();
         return redirect('/admin/user')->with('success', 'Xoá thành công !');
+    }
+    public function search(Request $request){
+        $k = $request->input('key');
+        $users = User::where('name','LIKE','%'.$k.'%')->paginate(15);
+        return view('admin.user.search', compact('users', 'k'));
     }
 }

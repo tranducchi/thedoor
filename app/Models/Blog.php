@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     use HasFactory;
+    public function author(){
+        return $this->belongsTo('App\Models\User', 'author_id');
+    }
 }

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('category', 'Slide')
-@section('title', 'Thêm mới')
+@section('title', 'Danh sách')
 @section('content')
     <div class="row">
         <div class="col-lg-6 offset-lg-3 mb-2">
@@ -12,6 +12,8 @@
                 </button>
             </form>
         </div>
+        {{-- created --}}
+        {{-- End create --}}
         <div class="col-lg-12">
             <table class="table">
                 <thead>
@@ -28,7 +30,6 @@
                 <tbody>
                 <?php $i = 1; ?>
                 @foreach($slide as $s)
-
                     @if($s->delete_status==1)
                         <tr>
                             <th scope="row">{{$i}}</th>
@@ -67,4 +68,29 @@
         </div>
     </div>
 @stop
-
+@section('script')
+    <script type="text/javascript">
+        $("#slide-add").click(function(e){
+            e.preventDefault();
+            $.ajax({
+            url: '/admin/slide',
+            data: new FormData($("form#slide")[0]),
+            contentType: false,
+            processData: false,
+            method: "POST",
+            }).done(function (data) {
+                $('.slide').modal('hide');
+                toastr.success('', 'Thêm mới thành công');
+                $output = '';
+               
+                
+            }).fail(function (data) {
+                $(".error-form").show();
+                $.each(errors.errors, function (i, val) {
+                    $("#slide").find("input[name=" + i + "]").siblings('.error-form').text(val[0])
+                    $("#slide").find("textarea[name=" + i + "]").siblings('.error-form').text(val[0])
+                });
+            });
+        });
+    </script>   
+@endsection

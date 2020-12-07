@@ -154,6 +154,9 @@ class CustomerController extends Controller
         //
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/service');
+        }
         $id = $request->id;
         Customer::whereIn('id', $id)->update([
             'delete_status'=>'0'

@@ -84,6 +84,9 @@ class CandidateController extends Controller
         //
     }
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/candidate');
+        }
         $id = $request->id;
         Candidate::whereIn('id', $id)->update([
             'delete_status'=>'0'

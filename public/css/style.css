@@ -2,9 +2,15 @@
     padding: 0;
     margin: 0;
 }
-
+span.error-form{
+    color:yellow;
+}
+button:focus {outline:0;}
 .thum-logo {
     width: 50px;
+}
+.owl-dots{
+    display: none;
 }
 a.this-spot{
     text-decoration: none;
@@ -493,6 +499,7 @@ a.on_top {
 /* page 3 human of the door */
 #human-of-the-door{
     position: relative;
+    overflow: hidden;
 }
 #p3-content{
     position: absolute;
@@ -646,7 +653,105 @@ p.title-brand{
 .navi-btn i{
     cursor: pointer;
 }
+/* code article */
+ #article{
+    position: relative;
+}
+#article .scroll-to{
+    height: 5%!important;
+}
+.one-article a.thumb-article{
+    width: 100%;
+    height: 200px;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.one-article .thumb-article img{
+    width: 100%;
+    height:auto;
+}
+.one-article a{
+    text-decoration: none;
+}
+.one-article h3.title-post{
+    color: #484852;
+    font-family:Montserrat-Bold;
+    text-transform: uppercase;
+}
+.main-article{
+    margin: 7% auto;
+}
+.main-article h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+   
+    font-size: 20px;
+}
+.main-article h3.article-title{
+    padding-top: 40px;
+    font-family:Montserrat-Bold;
+}
+img.arrow-right{
+    width: 40px;
+}
+a.one-article{
+    text-decoration: none;
+    color: black;
+}
+h3.article-title{
+    font-size: 50px;
+}
+img.bg-article {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
 
+}
+/* end code article  */
+/* code footer */
+.title-footer h3{
+    font-family:Montserrat-Bold;
+    font-size: 40px;
+    margin-top: 0;
+    padding-top: 40px;
+}
+.container-footer{
+    padding-top: 5%;
+}
+.title-footer span{
+    font-family:Montserrat-Light;
+}
+.info-contact .col-lg-6{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.info-contact p{
+    margin:12px;
+}
+ul.footer-social li{
+    list-style: none;
+    padding: 0 20px 0 0;
+}
+ul.footer-social{
+    margin: 12px;
+}
+ul.footer-social li i{
+    font-size: 20px;
+    color:#474851;
+}
+/* end footer */
+#footer{
+    position: relative;
+}
+h3.tit{
+    font-size: 30px!important;
+    font-family:Montserrat-Bold;
+}
+h3.tit span{
+    font-family:Montserrat-Light!important;
+}
 /* Reponsive code */
 
 /* Code mobile */

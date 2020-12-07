@@ -286,6 +286,10 @@
                 "MIT"
             ],
             "description": "CKFinder 3 package for Laravel",
+            "support": {
+                "issues": "https://github.com/ckfinder/ckfinder-laravel-package/issues",
+                "source": "https://github.com/ckfinder/ckfinder-laravel-package/tree/v3.5.1.6"
+            },
             "time": "2020-09-16T05:59:18+00:00"
         },
         {

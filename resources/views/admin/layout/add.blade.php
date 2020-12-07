@@ -9,11 +9,13 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Giao diện</label>
                     <select name="offset" id="" class="form-control">
-                        <option value="2">Trang 2</option>
-                        <option value="3">Trang 3</option>
-                        <option value="4">Trang 4</option>
-                        <option value="5">Trang 5</option>
-                        <option value="6">Trang 6</option>
+                        <option value="2">Our Story</option>
+                        <option value="3">Clients</option>
+                        <option value="4">What Are You Doing</option>
+                        <option value="5">Human</option>
+                        <option value="6">Article</option>
+                        <option value="7">Contact</option>
+                        <option value="8">Footer</option>
                     </select>
                 </div>
                 <div class="form-group">

@@ -7,7 +7,7 @@
             <form method="post" class="d-flex justify-content-start">
                 @csrf
                 <input class="form-control mr-sm-2" type="text" name="key" placeholder="Tìm kiếm" aria-label="Search">
-                <button formaction="/admin/dept/search" class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <button formaction="/admin/user/search" class="btn btn-outline-success my-2 my-sm-0" type="submit">
                     <i class="fa fa-search"></i>
                 </button>
             </form>
@@ -34,7 +34,7 @@
                 <?php $i = 1; ?>
                 @if($users) 
                 @foreach($users as $u)
-                    @if($u->type ==1)
+                    @if($u->type ==1 || Auth::user()->type ==0)
                         <tr disabled>
                             <th>
                                 <input type="checkbox" disabled class="sub_chk" name="id[]" value="{{$u->id}}">
@@ -62,7 +62,7 @@
                                 </form>
                             </td>
                         </tr>
-                    @else
+                    @elseif($u->type==0)
                         <tr>
                             <th>
                                 <input type="checkbox" class="sub_chk" name="id[]" value="{{$u->id}}">

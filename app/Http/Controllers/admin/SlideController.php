@@ -37,6 +37,9 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
+     
+
+       
         $request->validate(
             [
                 'title' => 'required',
@@ -48,31 +51,30 @@ class SlideController extends Controller
                 'title.required' => 'Vui lòng nhập tiêu đề cho slide',
                 'link.required' => 'Vui lòng nhập liên kết cho slide',
                 'image.required' => 'Vui lòng chọn ảnh cho slide',
-                'description.required' => 'Vui lòng nhập mô tả cho slide',
+                'description.required' => 'Vui lòng nhập mô tả cho slide'
             ]
-            );
-            $add = new Slide;
-            $add->title = $request->title;
-            $add->link = $request->link;
-            $add->describe = $request->description;
-            if($request->hasFile('image')){
-                // Get filename with the extension
-                $filenameWithExt = $request->file('image')->getClientOriginalName();
-                //Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $request->file('image')->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore= $filename.'_'.time().'.'.$extension;
-                // Upload Image
-                $path = $request->file('image')->storeAs('/public/img', $fileNameToStore);
-            }else {
-                $fileNameToStore = 'no-image.png';
-            }
-            $add->image = $fileNameToStore;
-            $add->save();
-            return redirect('/admin/slide')->with('success', 'Thêm thành công !');
-
+        );
+        $add = new Slide;
+        $add->title = $request->title;
+        $add->link = $request->link;
+        $add->describe = $request->description;
+        if($request->hasFile('image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('image')->storeAs('/public/img', $fileNameToStore);
+        }else {
+            $fileNameToStore = 'no-image.png';
+        }
+        $add->image = $fileNameToStore;
+        $add->save();
+        return redirect('/admin/slide');
     }
 
     /**
@@ -150,12 +152,15 @@ class SlideController extends Controller
      */
     public function destroy($id)
     {
+        if($request->id ==null){
+            return redirect('/admin/slide');
+        }
         $slide = Slide::find($id);
         $slide->delete_status =0;
         $slide->save();
         return redirect('/admin/slide')->with('success', 'Xóa thành công !');
     }
-    public function search(Request $request){
+    public function search(Request $request){    
         $k = $request->input('key');
         $slide = Slide::where('delete_status', '1')->where('title','LIKE','%'.$k.'%')->paginate(15);
         return view('admin.slide.search', compact('slide', 'k'));

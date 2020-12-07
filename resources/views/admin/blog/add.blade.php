@@ -23,14 +23,19 @@
                     <textarea name="content" id="text" cols="30" rows="10"></textarea>
                     <script src={{ url('ckeditor/ckeditor.js') }}></script>
                     <script>
-                        CKEDITOR.replace( 'text', {
-                            filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
-
-                        } );
-                    </script>
-                    @include('ckfinder::setup')
+                        CKEDITOR.replace( 'text',
+                   {
+                       filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
+                       filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?type=Images',
+                       filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?type=Flash',
+                       filebrowserUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                       filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                       filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                   });
+                   </script>
+              
                 </div>
-            <input type="text" value="{{Auth::user()->name}}" name="author" hidden>
+            <input type="text" value="{{Auth::user()->id}}" name="author" hidden>
                 <div class="form-group text-center mt-2">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle pr-1"></i>Thêm mới</button>
                 </div>

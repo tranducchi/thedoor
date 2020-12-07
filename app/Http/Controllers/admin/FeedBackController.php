@@ -80,6 +80,9 @@ class FeedBackController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function delete(Request $request){
+        if($request->id ==null){
+            return redirect('/admin/feed_back');
+        }
         $id = $request->id;
         FeedBack::whereIn('id', $id)->update([
             'delete_status'=>'0'
