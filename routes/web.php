@@ -21,7 +21,7 @@ Route::get('/',[FontendController::class, 'index']);
 Route::post('/add_somethingelse',[FontendController::class, 'add_ste']);
 Route::post('/add_hire',[FontendController::class, 'add_hire']);
 Route::post('/add_candidate',[FontendController::class, 'add_candidate']);
-Route::prefix('admin')->group(function () {
+Route::group(['prefix'=>'admin', 'middleware'=> 'auth' ],function () {
 
     Route::group(['namespace' => 'App\Http\Controllers\admin'], function () {
         Route::get('/',[AdminController::class,'index']);
@@ -70,4 +70,3 @@ Route::prefix('admin')->group(function () {
         Route::post('/user/search', 'UserController@search');
     });
 });
-

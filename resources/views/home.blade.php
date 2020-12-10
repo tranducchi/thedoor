@@ -19,6 +19,7 @@
   <!-- full page -->
   <title>Web Marketing</title>
 </head>
+
 <div id="fullpage">
   <!-- Header -->
   <div class="section fp-auto-height" id="section0">
@@ -29,7 +30,8 @@
           <div class="logo">
             <a href="/" class="d-flex justify-content-start">
               <div class="thum-logo pr-2">
-                <img src="img/logo.png" class="img-fluid" alt="">
+                <img src="img/logo/logo-w.png" class="img-fluid logo1" alt="">
+                <img src="img/logo/logo-b.png" class="img-fluid logo2" alt="">
               </div>
               <h3 class="d-flex align-items-end pb-2">THE DOOR</h3>
             </a>
@@ -110,11 +112,9 @@
       </div>
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
+        <div class="scroll-to d-flex justify-content-between text-white">
           <span>HOME</span>
-          <div class="group-arrow">
-            <a href="#our-story" class="fa fa-long-arrow-right" aria-hidden="true"></a>
-          </div>
+            <a href="#our-story" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
       <div class="tab-menu" id="list-menutab">
@@ -129,8 +129,7 @@
         </ul>
       </div>
       <div class="page-number">
-        <img src="img/dot-page.png" alt="">
-        Page 1
+        <img src="img/page/page-1.png" alt="">
       </div>
     </header>
   </div>
@@ -147,7 +146,7 @@
       @endforeach
       @endif
       @if($story ==0)
-      <img class="about-bg" src="img/home-2.png" alt="">
+      <img class="about-bg" src="img/layout/page-2.png" alt="">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==2)
@@ -159,7 +158,7 @@
         <div class="img-story">
           <img src="img/story-1.jpg" class="img-fluid" alt="">
         </div>
-        <p class="mt-5 text-white">
+        <p class="mt-5">
           We are not a traditional ad agency network —we are a radically open creative collective
           The overflow property specifies whether to clip content or to add scrollbars when an element's content is
           too big to fit in a specified
@@ -168,16 +167,14 @@
       </div>
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
+        <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
+          <a href="#header" class="fa fa-long-arrow-left" aria-hidden="true"></a>
           <span>OUR STORY</span>
-          <div class="group-arrow">
-            <a href="#header" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-            <a href="#human-of-the-door" class="fa fa-long-arrow-right" aria-hidden="true"></a>
-          </div>
+            <a href="#clients" class="fa fa-long-arrow-right" aria-hidden="true"></a>
         </div>
       </div>
-      <div class="page-number">
-        <img src="img/dot-page.png" alt=""> Page 2
+      <div class="page-number text-dark">
+        <img src="img/page/page-2.png" alt="">
       </div>
     </div>
   </div>
@@ -193,7 +190,7 @@
       @endforeach
       @endif
       @if($clients ==0)
-      <img src="img/home-6.png" alt="" class="about-bg">
+      <img src="img/layout/page-3.png" alt="" class="about-bg">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==3)
@@ -241,16 +238,14 @@
 
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
+        <div class="scroll-to d-flex justify-content-between text-white">
+          <a href="#our-story" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
           <span>CLIENTS</span>
-          <div class="group-arrow">
-            <a href="#what" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-            <a href="#about-us" class="fa fa-long-arrow-right" aria-hidden="true"></a>
-          </div>
+            <a href="#what" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
       <div class="page-number">
-        <img src="img/dot-page.png" alt=""> Page 5
+        <img src="img/page/page-3.png" alt="">
       </div>
     </div>
   </div>
@@ -266,7 +261,7 @@
       @endforeach
       @endif
       @if($what ==0)
-      <img src="img/home-4.png" alt="" class="about-bg">
+      <img src="img/layout/page-4.png" alt="" class="about-bg">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==4)
@@ -328,23 +323,19 @@
             </div>
           </div>
           {{-- end col 8 --}}
-
-
         </div>
       </div>
       {{-- end content what --}}
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
-          <span>WHAT ARE WE DOING ?</span>
-          <div class="group-arrow">
-            <a href="#human-of-the-door" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-            <a href="#clients" class="fa fa-long-arrow-right" aria-hidden="true"></a>
-          </div>
+        <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
+          <a href="#clients" class="fa fa-long-arrow-left" aria-hidden="true"></a>
+          <span>WHAT ARE YOU DOING ?</span>
+            <a href="#human-of-the-door" class="fa fa-long-arrow-right" aria-hidden="true"></a>
         </div>
       </div>
       <div class="page-number">
-        <img src="img/dot-page.png" alt=""> Page 4
+        <img src="img/page/page-4.png" alt="">
       </div>
     </div>
   </div>
@@ -360,7 +351,7 @@
       @endforeach
       @endif
       @if($human ==0)
-      <img src="img/p-3.png" alt="" class="about-bg">
+      <img src="img/layout/page-5.png" alt="" class="about-bg">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==5)
@@ -384,16 +375,14 @@
       </div>
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
-          <span>HUMAN</span>
-          <div class="group-arrow">
-            <a href="#our-story" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-            <a href="#what" class="fa fa-long-arrow-right" aria-hidden="true"></a>
-          </div>
+        <div class="scroll-to d-flex justify-content-between text-white">
+          <a href="#what" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
+          <span>HUMAN OF THE DOOR</span>
+            <a href="#article" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
       <div class="page-number">
-        <img src="img/dot-page.png" alt=""> Page 3
+        <img src="img/page/page-5.png" alt="">
       </div>
     </div>
   </div>
@@ -409,11 +398,11 @@
       @endforeach
       @endif
       @if($article ==0)
-      <img src="{{asset('/img/page-article.png')}}" class="bg-article" alt="">
+      <img src="{{asset('/img/layout/page-6.png')}}" class="about-bg" alt="">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==6)
-      <img class="bg-article" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
@@ -457,16 +446,14 @@
       {{-- end main article --}}
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
-          <span>HUMAN</span>
-          <div class="group-arrow">
-            <a href="#our-story" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-            <a href="#what" class="fa fa-long-arrow-right" aria-hidden="true"></a>
-          </div>
+        <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
+          <a href="#human-of-the-door" class="fa fa-long-arrow-left" aria-hidden="true"></a>
+          <span>ARTICLE</span>
+            <a href="#about-us" class="fa fa-long-arrow-right" aria-hidden="true"></a>
         </div>
       </div>
       <div class="page-number">
-        <img src="img/dot-page.png" alt=""> Page 3
+        <img src="img/page/page-6.png" alt="">
       </div>
     </div>
   </div>
@@ -482,7 +469,7 @@
       @endforeach
       @endif
       @if($about ==0)
-      <img src="img/home-6.png" alt="" class="about-bg">
+      <img src="img/layout/page-7.png" alt="" class="about-bg">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==7)
@@ -532,7 +519,7 @@
           <!-- title -->
           <div id="form1">
             <form method="post" action="add_hiree" id="form2">
-                   {{csrf_field()}}
+              {{csrf_field()}}
               <div class="container">
                 <div class="row">
                   <div class="d-none d-sm-none d-lg-block col-lg-6">
@@ -557,25 +544,25 @@
                         <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
                         <input type="text" name="partner_name" class="form-control" id="exampleInputEmail1"
                           aria-describedby="emailHelp">
-                          <span class="error-form"></span>
+                        <span class="error-form"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                           aria-describedby="emailHelp">
-                          <span class="error-form"></span>
+                        <span class="error-form"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">WHAT'S THE NAME OF YOUR PROJECT?</label>
                         <input type="text" name="project_name" class="form-control" id="exampleInputEmail1"
                           aria-describedby="emailHelp">
-                          <span class="error-form"></span>
+                        <span class="error-form"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">TELL US A BIT ABOUT YOUR PROJECT.</label>
                         <input type="text" name="describe_project" class="form-control" id="exampleInputEmail1"
                           aria-describedby="emailHelp">
-                          <span class="error-form"></span>
+                        <span class="error-form"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">HOW CAN WE HELP YOU</label>
@@ -586,9 +573,9 @@
                               <label class="form-check-label">
                                 <input type="radio" class="form-check-input" name="service_id"
                                   value="{{$s->id}}"><span>{{$s->service_name}}</span>
-                                  <span class="error-form"></span>
+                                <span class="error-form"></span>
                               </label>
-                              
+
                             </div>
                             @endforeach
                           </div>
@@ -618,7 +605,8 @@
       </div>
       <!-- Section three -->
       <div class="section-three tab-content" id="tab3">
-        <form action="/add_candidate" method="post">
+        <form action="/add_candidate" id="form2" method="post" enctype='multipart/form-data'>
+          @csrf
           <div class="container">
             <div class="row">
               <div class="col-6">
@@ -626,8 +614,8 @@
                   <div class="col-lg-8 offset-lg-2">
                     <h3 class="text-center pb-3">Be part of
                       our team</h3>
-                    <button type="submit" class="btn btn-outline-light mt-5 btn-send"><i class="fa fa-paper-plane pr-1"
-                        aria-hidden="true"></i>Send Us</button>
+                    <button type="submit" id="team" class="btn btn-outline-light mt-5 btn-send"><i
+                        class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                   </div>
 
                 </div>
@@ -646,21 +634,25 @@
                     <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
                     <input type="text" name="name" class="form-control" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
+                    <span class="error-form"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
+                    <span class="error-form"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">WHAT'S THE NAME OF YOUR PROJECT?</label>
                     <input type="text" name="project_name" class="form-control" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
+                    <span class="error-form"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">TELL US A BIT ABOUT YOUR PROJECT.</label>
                     <input type="text" name="introduce" class="form-control" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
+                    <span class="error-form"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">HOW CAN WE HELP YOU</label>
@@ -672,6 +664,7 @@
                             <input type="radio" class="form-check-input" name="dept_id"
                               value="{{$sl->id}}"><span>{{$sl->dept_name}}</span>
                           </label>
+                          <span class="error-form"></span>
                         </div>
                         @endforeach
                       </div>
@@ -683,6 +676,7 @@
                         <img src="img/upload-icon.png" alt="">
                       </label>
                       <input id="file-input" type="file" name="profile" hidden />
+                      <span class="error-form"></span>
                       <p>Upload your Profile here !</p>
                     </div>
                   </div>
@@ -702,8 +696,8 @@
                 <div class="about-left text-center text-white p1">
                   <div class="col-lg-8 offset-lg-2">
                     <h3 class="text-center pb-3">Something else</h3>
-                    <button id="something" class="btn btn-outline-light mt-5 btn-send" name="btn_fb"><i class="fa fa-paper-plane pr-1"
-                        aria-hidden="true"></i>Send Us</button>
+                    <button id="something" class="btn btn-outline-light mt-5 btn-send" name="btn_fb"><i
+                        class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                   </div>
                 </div>
               </div>
@@ -721,19 +715,19 @@
                     <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
                     <input type="text" name="name" class="form-control" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
-                      <span class="error-form"></span>
+                    <span class="error-form"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
-                      <span class="error-form"></span>
+                    <span class="error-form"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">WHAT’S YOUR MESSAGE DEAR?</label>
                     <textarea class="form-control" name="describe" id="exampleFormControlTextarea1" rows="12"
                       placeholder="Enter text here..."></textarea>
-                      <span class="error-form"></span>
+                    <span class="error-form"></span>
                   </div>
                 </div>
 
@@ -743,122 +737,131 @@
         </form>
       </div>
       <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between">
-          <span>CONTACT</span>
-          <div class="group-arrow">
-            <a href="#clients" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-          </div>
+        <div class="scroll-to d-flex justify-content-between text-white">
+          <a href="#article" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
+          <span>CONTACT US</span>
+            <a href="#footer" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
       <div class="page-number">
-        <img src="img/dot-page.png" alt=""> Page 6
+        <img src="img/page/page-7.png" alt="">
       </div>
     </div>
     <!-- navigate -->
   </div>
-</div>
 {{-- Article --}}
-<div class="section fp-auto-height" id="section7">
-  <footer id="footer">
-    <?php $footer =0; ?>
-    @if ($layouts)
-    @foreach ($layouts as $l)
-    @if($l->offset == 7)
-    <?php $footer++; ?>
-    @endif
-    @endforeach
-    @endif
-    @if($footer ==0)
-    <img src="{{asset('/img/footer.png')}}" class="bg-article" alt="">
-    @else
-    @foreach ($layouts as $l)
-    @if($l->offset ==7)
-    <img class="bg-article" src="{{asset('/storage/img/'.$l->link)}}" alt="">
-    @endif
-    @endforeach
-    @endif
+  <div class="section fp-auto-height" id="section7">
+    <footer id="footer">
+      <?php $footer =0; ?>
+      @if ($layouts)
+      @foreach ($layouts as $l)
+      @if($l->offset == 8)
+      <?php $footer++; ?>
+      @endif
+      @endforeach
+      @endif
+      @if($footer ==0)
+      <img src="{{asset('/img/layout/page-8.png')}}" class="bg-about" alt="">
+      @else
+      @foreach ($layouts as $l)
+      @if($l->offset ==8)
+      <img class="bg-article" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      @endif
+      @endforeach
+      @endif
 
-    <div class="container-footer container text-center">
-      <div class="title-footer">
-        <h3>CONTACT <span class="pl-3">US</span></h3>
+      <div class="container-footer container text-center">
+        <div class="title-footer">
+          <h3>CONTACT <span class="pl-3">US</span></h3>
+        </div>
+        <div class="info-contact">
+          <div class="row">
+            <div class="col-6 col-md-6 col-lg-6 text-right">
+              <img src="{{asset('/img/footer/home.png')}}" alt="">
+            </div>
+            <div class="col-6 col-md-6 col-lg-6 text-left d-flex align-items-end">
+              <p class="w-50 m-0 pl-1">No. 25, 4/228 Thanh Binh, Quarter 11,
+                Mo Lao Ward, Ha Dong, Hanoi.</p>
+            </div>
+          </div>
+          {{-- end row --}}
+          <div class="row">
+            <div class="col-6 col-md-6 col-lg-6 text-right">
+              <p>
+                contact@thedoor.vn
+              </p>
+
+            </div>
+            <div class="col-6 col-md-6 col-lg-6 text-left">
+              <img src="{{asset('/img/footer/contact.png')}}" alt="">
+            </div>
+          </div>
+          {{-- end row --}}
+          <div class="row">
+            <div class="col-6 col-md-6 col-lg-6 text-right">
+              <img src="{{asset('/img/footer/phone.png')}}" alt="">
+            </div>
+            <div class="col-6 col-md-6 col-lg-6 text-left d-flex align-items-end">
+              <p>
+                0838.970.828
+              </p>
+
+            </div>
+          </div>
+          {{-- end row --}}
+          <div class="row">
+            <div class="col-6 col-md-6 col-lg-6 text-right">
+              <p>0838.970.828</p>
+            </div>
+            <div class="col-6 col-md-6 col-lg-6 text-left d-flex align-items-end">
+
+              <img src="{{asset('/img/footer/tag.png')}}" alt="">
+            </div>
+          </div>
+          {{-- end row --}}
+          <div class="row">
+            <div class="col-6 col-md-6 col-lg-6 text-right">
+              <img src="{{asset('/img/footer/get.png')}}" alt="">
+            </div>
+            <div class="col-6 col-md-6 col-lg-6 text-left d-flex align-items-end">
+              <ul class="d-flex pl-2 justify-content-start footer-social">
+                <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          {{-- end row --}}
+          <div class="row">
+            <div class="col-6 col-md-6 col-lg-6 text-right">
+              <p>
+                www.thedoor.vn
+              </p>
+
+            </div>
+            <div class="col-6 col-md-6 col-lg-6 text-left d-flex align-items-end">
+              <img src="{{asset('/img/footer/power.png')}}" alt="">
+            </div>
+          </div>
+          {{-- end row --}}
+        </div>
+        <h3 class="tit">The Door <span>AGENCY</span></h3>
       </div>
-      <div class="info-contact">
-        <div class="row">
-          <div class="col-lg-6 text-right">
-            <img src="{{asset('/img/footer/home.png')}}" alt="">
-          </div>
-          <div class="col-lg-6 text-left d-flex align-items-end">
-            <p class="w-50 m-0 pl-1">No. 25, 4/228 Thanh Binh, Quarter 11,
-              Mo Lao Ward, Ha Dong, Hanoi.</p>
-          </div>
+      <div class="scroll-div d-none d-sm-block">
+        <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
+          <a href="#about-us" class="fa fa-long-arrow-left" aria-hidden="true"></a>
+          <span>FOOTER</span>
         </div>
-        {{-- end row --}}
-        <div class="row">
-          <div class="col-lg-6 text-right">
-            <p>
-              contact@thedoor.vn
-            </p>
-
-          </div>
-          <div class="col-lg-6 text-left">
-            <img src="{{asset('/img/footer/contact.png')}}" alt="">
-          </div>
-        </div>
-        {{-- end row --}}
-        <div class="row">
-          <div class="col-lg-6 text-right">
-            <img src="{{asset('/img/footer/phone.png')}}" alt="">
-          </div>
-          <div class="col-lg-6 text-left d-flex align-items-end">
-            <p>
-              0838.970.828
-            </p>
-
-          </div>
-        </div>
-        {{-- end row --}}
-        <div class="row">
-          <div class="col-lg-6 text-right">
-            <p>0838.970.828</p>
-          </div>
-          <div class="col-lg-6 text-left d-flex align-items-end">
-
-            <img src="{{asset('/img/footer/tag.png')}}" alt="">
-          </div>
-        </div>
-        {{-- end row --}}
-        <div class="row">
-          <div class="col-lg-6 text-right">
-            <img src="{{asset('/img/footer/get.png')}}" alt="">
-          </div>
-          <div class="col-lg-6 text-left d-flex align-items-end">
-            <ul class="d-flex pl-2 justify-content-start footer-social">
-              <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        {{-- end row --}}
-        <div class="row">
-          <div class="col-lg-6 text-right">
-            <p>
-              www.thedoor.vn
-            </p>
-
-          </div>
-          <div class="col-lg-6 text-left d-flex align-items-end">
-            <img src="{{asset('/img/footer/power.png')}}" alt="">
-          </div>
-        </div>
-        {{-- end row --}}
       </div>
-      <h3 class="tit">The Door <span>AGENCY</span></h3>
+      <div class="page-number">
+        <img src="img/page/page-8.png" alt="">
+      </div>
     </div>
-  </footer>
-</div>
+    <!-- navigate -->
+    </footer>
+  </div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
@@ -873,11 +876,11 @@
 <script src="js/owl.carousel.js"></script>
 <!-- Full page -->
 {{-- <script src="js/fullpage.js"></script>
-    <script type="text/javascript">
-      var myFullpage = new fullpage('#fullpage', {
+<script type="text/javascript">
+  var myFullpage = new fullpage('#fullpage', {
         scrollBar: true
       });
-    </script> --}}
+</script> --}}
 </body>
 
 </html>

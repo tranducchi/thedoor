@@ -79,49 +79,51 @@ class FontendController extends Controller
     }
     public function add_candidate(Request $request){
       
-        // $validatedData = $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required',
-        //     'project_name' => 'required',
-        //     'introduce' => 'required',
-        //     'dept_id'=>'required',
-        //     // 'profile'=>'required',
-        // ],[
-        //     'name.required' => 'Trường tên không được để trống',
-        //     'email.required' => 'Trường email không được để trống',
-        //     'project_name.required' => 'Trường tên dự án không được để trống',
-        //     'introduce.required' =>'Trường mô tả không được để trống',
-        //     'dept_id.required'=>'Trường bộ phận không được để trống',
-        //     // 'profile.required'=>'Trường profile không được để trống',
-        // ]);
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'project_name' => 'required',
+            'introduce' => 'required',
+            'dept_id'=>'required',
+            // 'profile'=>'required',
+        ],[
+            'name.required' => 'Trường tên không được để trống',
+            'email.required' => 'Trường email không được để trống',
+            'project_name.required' => 'Trường tên dự án không được để trống',
+            'introduce.required' =>'Trường mô tả không được để trống',
+            'dept_id.required'=>'Trường bộ phận không được để trống',
+            // 'profile.required'=>'Trường profile không được để trống',
+        ]);
         //upload
 
         if($request->hasFile('profile')){
-            // Get filename with the extension
-            $filenameWithExt = $request->file('profile')->getClientOriginalName();
-            //Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('profile')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            // Upload Image
-            $path = $request->file('profile')->storeAs('/public/img', $fileNameToStore);
+            return "yes";
+            // // Get filename with the extension
+            // $filenameWithExt = $request->file('profile')->getClientOriginalName();
+            // //Get just filename
+            // $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // // Get just ext
+            // $extension = $request->file('profile')->getClientOriginalExtension();
+            // // Filename to store
+            // $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // // Upload Image
+            // $path = $request->file('profile')->storeAs('/public/img', $fileNameToStore);
         }else {
-            $fileNameToStore = 'no-profile.pdf';
+            // $fileNameToStore = 'no-profile.png';
+            return "no";
         }
    
-        $candidate = new Candidate;
-        $candidate->profile=$fileNameToStore;
+        // $candidate = new Candidate;
+        // $candidate->profile=$fileNameToStore;
        
-        $candidate->name=$request->name;
-        $candidate->email=$request->email;
-        $candidate->project_name=$request->project_name;
-        $candidate->introduce=$request->introduce;
-        $candidate->dept_id=$request->dept_id;
+        // $candidate->name=$request->name;
+        // $candidate->email=$request->email;
+        // $candidate->project_name=$request->project_name;
+        // $candidate->introduce=$request->introduce;
+        // $candidate->dept_id=$request->dept_id;
     
-        $candidate->save();
+        // $candidate->save();
       
-        return redirect('/')->with('success', 'Thêm thành công !');
+        // return redirect('/')->with('success', 'Thêm thành công !');
     }
 }
