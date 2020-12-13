@@ -1,6 +1,39 @@
 
 
 $(document).ready(function () {
+    
+    // $("#owl-article").owlCarousel();
+    $('#owl-article').owlCarousel({
+        loop:true,
+        margin:10,
+       
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:3
+            }
+        }
+    })
+    // nex slide article 
+    var owl = $('#owl-article');
+    owl.owlCarousel();
+    $('.nextArticle').click(function() {
+        owl.trigger('next.owl.carousel');
+    })
+    $('.preArticle').click(function() {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        owl.trigger('prev.owl.carousel', [300]);
+    })
+    $('#mobile-hius').on('click', function(e){
+        e.preventDefault();
+        console.log('hello');
+    });
     // BUtton hi us
     $('#hius').on('click', function(e){
         e.preventDefault()
@@ -83,6 +116,7 @@ $(document).ready(function () {
         });
     });
     // end something
+   
     $('.three-owl').owlCarousel({
         loop: true,
         margin: 10,
@@ -90,13 +124,13 @@ $(document).ready(function () {
         //navText: ["<img src='img/p3-pre.png'>","<img src='img/p3-next.png'>"],
         responsive: {
             0: {
-                items: 2
+                items:1
             },
             600: {
                 items: 2
             },
             1000: {
-                items: 2
+                items: 2,
             }
         }
         
@@ -118,8 +152,8 @@ $(document).ready(function () {
             }
         }
     });
-// one carousel
-    $('.one-owl').owlCarousel({
+// // one carousel
+    $('#owl-client').owlCarousel({
      
         loop: true,
         margin: 10,
@@ -141,20 +175,20 @@ $(document).ready(function () {
         }
         
     })
-    var owl = $('.one-owl');
-    owl.owlCarousel();
-    // Go to the next item
-    $('.customNextBtn').click(function() {
-        owl.trigger('next.owl.carousel');
-        console.log("next");
-    })
-    // Go to the previous item
-    $('.customPrevBtn').click(function() {
-        // With optional speed parameter
-        // Parameters has to be in square bracket '[]'
-        owl.trigger('prev.owl.carousel', [300]);
-        console.log("preview");
-    })
+    // var owl = $('#owl-client');
+    // owl.owlCarousel();
+    // // Go to the next item
+    // $('.customNextBtn').click(function() {
+    //     owl.trigger('next.owl.carousel');
+    //     console.log("next");
+    // })
+    // // Go to the previous item
+    // $('.customPrevBtn').click(function() {
+    //     // With optional speed parameter
+    //     // Parameters has to be in square bracket '[]'
+    //     owl.trigger('prev.owl.carousel', [300]);
+    //     console.log("preview");
+    // })
 
     //stop next slide
     $('.carousel').carousel('pause');
@@ -162,6 +196,8 @@ $(document).ready(function () {
     //open menu
     $('.menu-button').click(function () {
         $('span.btn1').toggleClass('rotate-right');
+      
+        
         $('span.btn2').toggleClass('rotate-left');
         $('.tab-menu').toggleClass("move-menu");
     });
@@ -254,6 +290,13 @@ $(window).scroll(function() {
     }
     else if(scroll >= story && scroll <clients){
         // dark
+        $('.menu-button').click(function () {
+            //  $('.left-menu .search input').toggleClass('bg-dark text-dark');
+            // $('.left-menu .lang a').toggleClass('text-dark')
+        //     $('.left-menu .menu-button span').removeClass('bg-dark').toggleClass('bg-white');
+        });
+      
+
         $('.lang a,span').addClass('text-dark')
         $('.menu-button span').addClass('bg-dark')
         $('.left-menu form input').addClass('bg-dark text-white')
@@ -292,8 +335,6 @@ $(window).scroll(function() {
           $('.menu-button span').addClass('bg-dark')
           $('.left-menu form input').addClass('bg-dark text-white')
           $('.logo h3').addClass('text-dark')    
-          lg1.show();
-          lg2.hide();
         lg1.show();
         lg2.hide();
     }

@@ -56,9 +56,8 @@
         </div>
       </div>
       <!-- Menu mobile -->
-
       <!-- End menu -->
-      <div id="carouselExampleIndicators" class="carousel slide">
+      <div id="carouselExampleIndicators" class="carousel slide d-none d-sm-block">
         <ol class="carousel-indicators">
           @for($i=0; $i < $count; $i++) @if($i==0) <li data-target="#carouselExampleIndicators" data-slide-to="0"
             class="active">
@@ -110,11 +109,28 @@
           @endforeach
         </div>
       </div>
+      <div class="carousel-mobile d-block d-sm-none">
+        <img src="img/mobile/page-1.png" alt="">
+        <div class="content-carousel-m">
+          <h3 class="title">
+            TOUCH THE DOOR, OPEN CREATIVE
+          </h3>
+          <div class="description">
+            Inspired by the doors in life, The Door is the owner of the magical door that brings you to creative lands.
+            Besides, there is the motto "Creation or no door". The young team is constantly improving to continue
+            collecting creative cultural texts in the world ...
+          </div>
+          <div class="button-header text-right">
+            <a href="" class="btn btn-secondary mt-4 bg-white text-dark border-0">READ MORE</a>
+          </div>
+        </div>
+      </div>
+
       <!-- navigate -->
       <div class="scroll-div d-none d-sm-block">
         <div class="scroll-to d-flex justify-content-between text-white">
           <span>HOME</span>
-            <a href="#our-story" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
+          <a href="#our-story" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
       <div class="tab-menu" id="list-menutab">
@@ -128,7 +144,7 @@
           <li><a href="/login"><i class="fa fa-sign-in pr-2" aria-hidden="true"></i>LOGIN</a></li>
         </ul>
       </div>
-      <div class="page-number">
+      <div class="page-number d-none d-sm-block">
         <img src="img/page/page-1.png" alt="">
       </div>
     </header>
@@ -146,14 +162,15 @@
       @endforeach
       @endif
       @if($story ==0)
-      <img class="about-bg" src="img/layout/page-2.png" alt="">
+      <img class="about-bg d-none d-sm-block" src="img/layout/page-2.png" alt="">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==2)
-      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg d-none d-sm-block" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
+      <img class="d-block d-sm-none" src="img/mobile/page-2.png" alt="">
       <div class="container story-content">
         <div class="img-story">
           <img src="img/story-1.jpg" class="img-fluid" alt="">
@@ -170,10 +187,10 @@
         <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
           <a href="#header" class="fa fa-long-arrow-left" aria-hidden="true"></a>
           <span>OUR STORY</span>
-            <a href="#clients" class="fa fa-long-arrow-right" aria-hidden="true"></a>
+          <a href="#clients" class="fa fa-long-arrow-right" aria-hidden="true"></a>
         </div>
       </div>
-      <div class="page-number text-dark">
+      <div class="page-number d-none d-sm-block text-dark">
         <img src="img/page/page-2.png" alt="">
       </div>
     </div>
@@ -190,24 +207,32 @@
       @endforeach
       @endif
       @if($clients ==0)
-      <img src="img/layout/page-3.png" alt="" class="about-bg">
+      <img src="img/layout/page-3.png" alt="" class="about-bg d-none d-sm-block">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==3)
-      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg d-none d-sm-block" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
-
+      <img class="about-bg d-block d-sm-none" src="/img/mobile/page-3.png" alt="">
       <div class="content-client">
         <div class="row">
           <div class="col-lg-3">
-            <div class="this-spot w-75 text-center">
-              <a href="#about-us">THIS SPOT AWAITS YOU</a>
-              <div class="navi-btn mt-5">
-                <i class="fa fa-angle-left customNextBtn fa-2x pr-2" aria-hidden="true"></i>
-                <i class="fa fa-angle-right customPrevBtn fa-2x pl-2" aria-hidden="true"></i>
+            <div class="this-spot text-center">
+              <div class="row">
+                <div class="col-6 col-md-12">
+                  <a href="#about-us">THIS SPOT AWAITS YOU</a>
+                </div>
+                <div class="col-6 col-md-12">
+                  <div class="navi-btn mt">
+                    <i class="fa fa-angle-left customNextBtn fa-2x pr-2" aria-hidden="true"></i>
+                    <i class="fa fa-angle-right customPrevBtn fa-2x pl-2" aria-hidden="true"></i>
+                  </div>
+                </div>
               </div>
+
+
             </div>
           </div>
           <div class="col-lg-9">
@@ -241,10 +266,10 @@
         <div class="scroll-to d-flex justify-content-between text-white">
           <a href="#our-story" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
           <span>CLIENTS</span>
-            <a href="#what" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
+          <a href="#what" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
-      <div class="page-number">
+      <div class="page-number d-none d-sm-block">
         <img src="img/page/page-3.png" alt="">
       </div>
     </div>
@@ -261,27 +286,28 @@
       @endforeach
       @endif
       @if($what ==0)
-      <img src="img/layout/page-4.png" alt="" class="about-bg">
+      <img src="img/layout/page-4.png" alt="" class="about-bg d-none d-sm-block">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==4)
-      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg d-none d-sm-block" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
-
+      <img class="about-bg d-block d-sm-none" src="/img/mobile/page-4.png" alt="">
       <div class="what-content container">
         <div class="row">
           <div class="col-lg-3">
             <div class="what-left">
               <h3>WHAT ARE WHERE DOING?</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, rerum numquam quas sint quisquam nihil
+              <p class="d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, rerum numquam
+                quas sint quisquam nihil
                 vero omnis facilis repellat nobis,.</p>
             </div>
           </div>
           {{-- end col 4 --}}
           <div class="col-lg-9">
-            <div class="what-right pl-5">
+            <div class="what-right">
               <div class="three-owl owl-carousel owl-theme">
                 <a href="#" class="item">
                   <div class="brand-box">
@@ -298,7 +324,7 @@
                   </div>
                 </a>
                 {{-- End item --}}
-                <a class="item">
+                <a href="#" class="item">
                   <div class="brand-box">
                     <img src="{{asset('/img/product/2.png')}}" alt="" class="img-fluid">
                     <div class="info-box text-center">
@@ -330,11 +356,11 @@
       <div class="scroll-div d-none d-sm-block">
         <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
           <a href="#clients" class="fa fa-long-arrow-left" aria-hidden="true"></a>
-          <span>WHAT ARE YOU DOING ?</span>
-            <a href="#human-of-the-door" class="fa fa-long-arrow-right" aria-hidden="true"></a>
+          <span>WHAT ARE YOU DOING</span>
+          <a href="#human-of-the-door" class="fa fa-long-arrow-right" aria-hidden="true"></a>
         </div>
       </div>
-      <div class="page-number">
+      <div class="page-number d-none d-sm-block">
         <img src="img/page/page-4.png" alt="">
       </div>
     </div>
@@ -351,18 +377,28 @@
       @endforeach
       @endif
       @if($human ==0)
-      <img src="img/layout/page-5.png" alt="" class="about-bg">
+      <img src="img/layout/page-5.png" alt="" class="about-bg d-none d-sm-block">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==5)
-      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg d-none d-sm-block" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
-
-
+      <img class="about-bg d-block d-sm-none" src="/img/mobile/page-5.png" alt="">
+      <div class="container people d-block d-sm-none">
+        <h3 class="text-white">People</h3>
+        <p>We are experts in creating world-class campaigns, optimize & innovate the entire journey from brand contact
+          to end purchase.</p>
+        <img src="/img/article/1.png" class="w-100" alt="">
+        <div class="meet text-center">
+          <a href="" class="btn btn-outline-secondary meet-team"><span>Meet the team</span><img
+              src="img/arrow-right.png" class="m-0 pl-1" alt=""></a>
+        </div>
+      </div>
+      {{-- end mobile --}}
       <button type="button" class="btn btn-outline-light btn-send d-none d-sm-block">Meet the team</button>
-      <div class="container " id="p3-content">
+      <div class="container d-none d-sm-block" id="p3-content">
         <div class="two-carousel owl-carousel">
           @if($staffs)
           @foreach ($staffs as $s)
@@ -378,10 +414,10 @@
         <div class="scroll-to d-flex justify-content-between text-white">
           <a href="#what" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
           <span>HUMAN OF THE DOOR</span>
-            <a href="#article" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
+          <a href="#article" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
         </div>
       </div>
-      <div class="page-number">
+      <div class="page-number d-none d-sm-block">
         <img src="img/page/page-5.png" alt="">
       </div>
     </div>
@@ -398,15 +434,15 @@
       @endforeach
       @endif
       @if($article ==0)
-      <img src="{{asset('/img/layout/page-6.png')}}" class="about-bg" alt="">
+      <img src="{{asset('/img/layout/page-6.png')}}" class="about-bg d-none d-sm-block" alt="">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==6)
-      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg d-none d-sm-block" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
-
+      <img src="/img/mobile/page-6.png" class="d-block d-sm-none" alt="">
 
       <section class="main-article container">
         <h3 class="article-title text-center display-4">ARTICLE</h3>
@@ -416,32 +452,44 @@
           we are creatives, so it might be about bananas and stuff
         </p>
         <div class="view-more d-flex justify-content-end mb-2">
-          <a href="#" class="text-dark"><span>View more</span>
+          <a href="#" class="text-dark d-none d-sm-block"><span>View more</span>
             <img src="{{asset('/img/arrow-right.png')}}" class="arrow-right" alt="">
           </a>
         </div>
         <div class="row">
-          @if($blogs)
-          @foreach ($blogs as $b)
-          <div class="col-lg-4">
-            <div class="one-article">
-              <a href="#" class="thumb-article">
-                <img src="{{asset('/storage/img/'.$b->thumbnail)}}" alt="">
-              </a>
-              <a href="#">
-                <h3 class="title-post">{{$b->title}}</h3>
-              </a>
-              <div class="article-info">
-                by <b>{{$b->author->name}}</b> - <span>{{$b->created_at->format('F d Y')}}</span>
+          <div class="four-owl owl-carousel owl-theme" id="owl-article">
+            @if($blogs)
+            @foreach ($blogs as $b)
+            <div class="item">
+              <div class="col-lg-12">
+                <div class="one-article">
+                  <a href="#" class="thumb-article">
+                    <img src="{{asset('/storage/img/'.$b->thumbnail)}}" alt="">
+                  </a>
+                  <a href="#">
+                    <h3 class="title-post">{{$b->title}}</h3>
+                  </a>
+                  <div class="article-info">
+                    by <b>{{$b->author->name}}</b> - <span>{{$b->created_at->format('F d Y')}}</span>
+                  </div>
+                </div>
+                {{-- end one-article --}}
               </div>
+              {{-- End one column --}}
             </div>
-            {{-- end one-article --}}
+            @endforeach
+            @endif
           </div>
-          {{-- End one column --}}
-          @endforeach
-          @endif
+
+
 
         </div>
+
+        <div class="navi-article text-right d-block d-sm-none pt-2">
+          <i class="fa fa-long-arrow-left preArticle"></i>
+          <i class="fa fa-long-arrow-right ml-2 nextArticle"></i>
+        </div>
+
       </section>
       {{-- end main article --}}
       <!-- navigate -->
@@ -449,10 +497,10 @@
         <div class="scroll-to border-bottom d-flex justify-content-between text-dark">
           <a href="#human-of-the-door" class="fa fa-long-arrow-left" aria-hidden="true"></a>
           <span>ARTICLE</span>
-            <a href="#about-us" class="fa fa-long-arrow-right" aria-hidden="true"></a>
+          <a href="#about-us" class="fa fa-long-arrow-right" aria-hidden="true"></a>
         </div>
       </div>
-      <div class="page-number">
+      <div class="page-number d-none d-sm-block">
         <img src="img/page/page-6.png" alt="">
       </div>
     </div>
@@ -469,21 +517,21 @@
       @endforeach
       @endif
       @if($about ==0)
-      <img src="img/layout/page-7.png" alt="" class="about-bg">
+      <img src="img/layout/page-7.png" alt="" class="about-bg d-none d-sm-block">
       @else
       @foreach ($layouts as $l)
       @if($l->offset ==7)
-      <img class="about-bg" src="{{asset('/storage/img/'.$l->link)}}" alt="">
+      <img class="about-bg d-none d-sm-block" src="{{asset('/storage/img/'.$l->link)}}" alt="">
       @endif
       @endforeach
       @endif
-
+      <img src="/img/mobile/page-7.png" class="about-bg d-block d-sm-none" alt="">
       <div class="tabs-content">
         <!-- Section one -->
         <div class="section-one tab-content" id="tab1">
           <div class="container">
             <div class="row">
-              <div class="col-6">
+              <div class="col-lg-6">
                 <div class="about-left text-center text-white p1">
                   <div class="col-lg-8 offset-lg-2">
                     <h3 class="text-center">WHAT'S THE OCCASION ?</h3>
@@ -500,7 +548,7 @@
                 </div>
               </div>
               <!-- Col 6 -->
-              <div class="col-6">
+              <div class="col-lg-6">
                 <div class="selection">
                   <ul id="tabs-nav">
                     <li><a href="#tab2" class="atab">Hire us</a></li>
@@ -533,7 +581,7 @@
                   </div>
                   <div class="col-lg-6 d-flex flex-column">
                     <ul id="tabs-nav" class="arrow p-0">
-                      <li>
+                      <li class="arrow-1">
                         <a href="#tab1">
                           <img src="img/arrow-left.png" alt="">
                         </a>
@@ -595,6 +643,10 @@
                         </div>
 
                       </div>
+                      <div class="form-group text-center d-block d-sm-none">
+                        <button type="submit" class="btn btn-outline-light btn-send btn-sm" id="mobile-hius"><i
+                          class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -602,154 +654,162 @@
             </form>
           </div>
         </div>
-      </div>
-      <!-- Section three -->
-      <div class="section-three tab-content" id="tab3">
-        <form action="/add_candidate" id="form2" method="post" enctype='multipart/form-data'>
-          @csrf
-          <div class="container">
-            <div class="row">
-              <div class="col-6">
-                <div class="about-left text-center text-white p1">
-                  <div class="col-lg-8 offset-lg-2">
-                    <h3 class="text-center pb-3">Be part of
-                      our team</h3>
-                    <button type="submit" id="team" class="btn btn-outline-light mt-5 btn-send"><i
-                        class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-6 d-flex flex-column">
-                <ul id="tabs-nav" class="arrow p-0">
-                  <li>
-                    <a href="#tab1">
-                      <img src="img/arrow-left.png" alt="">
-                    </a>
-                  </li>
-
-                </ul>
-                <div class="about-right">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <span class="error-form"></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <span class="error-form"></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">WHAT'S THE NAME OF YOUR PROJECT?</label>
-                    <input type="text" name="project_name" class="form-control" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <span class="error-form"></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">TELL US A BIT ABOUT YOUR PROJECT.</label>
-                    <input type="text" name="introduce" class="form-control" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <span class="error-form"></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">HOW CAN WE HELP YOU</label>
-                    <div class="list-option">
-                      <div class="row">
-                        @foreach($sldept as $sl)
-                        <div class="col-lg-6">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="dept_id"
-                              value="{{$sl->id}}"><span>{{$sl->dept_name}}</span>
-                          </label>
-                          <span class="error-form"></span>
-                        </div>
-                        @endforeach
-                      </div>
-                      <!-- End row -->
+        <!-- Section three -->
+        <div class="section-three tab-content" id="tab3">
+          <form action="/add_candidate" id="form2" method="post" enctype='multipart/form-data'>
+            @csrf
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 d-none d-sm-block">
+                  <div class="about-left text-center text-white p1">
+                    <div class="col-lg-8 offset-lg-2">
+                      <h3 class="text-center pb-3">Be part of
+                        our team</h3>
+                      <button type="submit" id="team" class="btn btn-outline-light mt-5 btn-send"><i
+                          class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                     </div>
-                    <!-- End list option -->
-                    <div class="image-upload d-flex justify-content-start pt-3">
-                      <label for="file-input" class="pr-3">
-                        <img src="img/upload-icon.png" alt="">
-                      </label>
-                      <input id="file-input" type="file" name="profile" hidden />
+
+                  </div>
+                </div>
+                <div class="col-lg-12 d-flex flex-column">
+                  <ul id="tabs-nav" class="arrow p-0">
+                    <li class="arrow-1">
+                      <a href="#tab1">
+                        <img src="img/arrow-left.png" alt="">
+                      </a>
+                    </li>
+
+                  </ul>
+                  <div class="about-right">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
+                      <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
                       <span class="error-form"></span>
-                      <p>Upload your Profile here !</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                      <span class="error-form"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">WHAT'S THE NAME OF YOUR PROJECT?</label>
+                      <input type="text" name="project_name" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                      <span class="error-form"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">TELL US A BIT ABOUT YOUR PROJECT.</label>
+                      <input type="text" name="introduce" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                      <span class="error-form"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">HOW CAN WE HELP YOU</label>
+                      <div class="list-option">
+                        <div class="row">
+                          @foreach($sldept as $sl)
+                          <div class="col-lg-6">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input radio-contact" name="dept_id"
+                                value="{{$sl->id}}"><span>{{$sl->dept_name}}</span>
+                            </label>
+                            <span class="error-form"></span>
+                          </div>
+                          @endforeach
+                        </div>
+                        <!-- End row -->
+                      </div>
+                      <!-- End list option -->
+                      <div class="image-upload d-flex justify-content-start pt-3">
+                        <label for="file-input" class="pr-3">
+                          <img src="img/upload-icon.png" alt="">
+                        </label>
+                        <input id="file-input" type="file" name="profile" hidden />
+                        <span class="error-form"></span>
+                        <p>Upload your Profile here !</p>
+                      </div>
+                    </div>
+                    <div class="form-group text-center d-block d-sm-none">
+                      <button type="submit" class="btn btn-outline-light btn-send btn-sm" id="mobile-team"><i
+                        class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
-      </div>
-      <!-- Section four -->
-      <div class="section-four tab-content" id="tab4">
-        <form method="POST" id="form3">
-          {{csrf_field()}}
-          <div class="container">
-            <div class="row">
-              <div class="col-6">
-                <div class="about-left text-center text-white p1">
-                  <div class="col-lg-8 offset-lg-2">
-                    <h3 class="text-center pb-3">Something else</h3>
-                    <button id="something" class="btn btn-outline-light mt-5 btn-send" name="btn_fb"><i
+          </form>
+        </div>
+        <!-- Section four -->
+        <div class="section-four tab-content" id="tab4">
+          <form method="POST" id="form3">
+            {{csrf_field()}}
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 d-none d-sm-block">
+                  <div class="about-left text-center text-white p1">
+                    <div class="col-lg-8 offset-lg-2">
+                      <h3 class="text-center pb-3">Something else</h3>
+                      <button id="something" class="btn btn-outline-light mt-5 btn-send" name="btn_fb"><i
+                          class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column">
+                  <ul id="tabs-nav" class="arrow p-0">
+                    <li class="arrow-1">
+                      <a href="#tab1">
+                        <img src="img/arrow-left.png" alt="">
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="about-right">
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
+                      <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                      <span class="error-form"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                      <span class="error-form"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">WHAT’S YOUR MESSAGE DEAR?</label>
+                      <textarea class="form-control" name="describe" id="exampleFormControlTextarea1" rows="8"
+                        placeholder="Enter text here..."></textarea>
+                      <span class="error-form"></span>
+                    </div>
+                    <div class="form-group text-center d-block d-sm-none">
+                      <button type="submit" class="btn btn-outline-light btn-send btn-sm" id="mobile-something"><i
                         class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-6 d-flex flex-column">
-                <ul id="tabs-nav" class="arrow p-0">
-                  <li>
-                    <a href="#tab1">
-                      <img src="img/arrow-left.png" alt="">
-                    </a>
-                  </li>
-                </ul>
-                <div class="about-right">
 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">WHAT'S YOUR NAME</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <span class="error-form"></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">DO YOU HAVE E-MAIL ?</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <span class="error-form"></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">WHAT’S YOUR MESSAGE DEAR?</label>
-                    <textarea class="form-control" name="describe" id="exampleFormControlTextarea1" rows="12"
-                      placeholder="Enter text here..."></textarea>
-                    <span class="error-form"></span>
-                  </div>
                 </div>
-
               </div>
             </div>
-          </div>
-        </form>
-      </div>
-      <div class="scroll-div d-none d-sm-block">
-        <div class="scroll-to d-flex justify-content-between text-white">
-          <a href="#article" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
-          <span>CONTACT US</span>
+          </form>
+        </div>
+        <div class="scroll-div d-none d-sm-block">
+          <div class="scroll-to d-flex justify-content-between text-white">
+            <a href="#article" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
+            <span>CONTACT US</span>
             <a href="#footer" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
+          </div>
+        </div>
+        <div class="page-number d-none d-som-block">
+          <img src="img/page/page-7.png" alt="">
         </div>
       </div>
-      <div class="page-number">
-        <img src="img/page/page-7.png" alt="">
-      </div>
+      <!-- navigate -->
     </div>
-    <!-- navigate -->
   </div>
-{{-- Article --}}
+  {{-- Article --}}
   <div class="section fp-auto-height" id="section7">
     <footer id="footer">
       <?php $footer =0; ?>
@@ -855,13 +915,15 @@
           <span>FOOTER</span>
         </div>
       </div>
-      <div class="page-number">
+      <div class="page-number d-none d-sm-block">
         <img src="img/page/page-8.png" alt="">
       </div>
-    </div>
-    <!-- navigate -->
     </footer>
   </div>
+
+</div>
+<!-- navigate -->
+
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
@@ -875,12 +937,12 @@
 <script src="js/select.js"></script>
 <script src="js/owl.carousel.js"></script>
 <!-- Full page -->
-{{-- <script src="js/fullpage.js"></script>
+<script src="js/fullpage.js"></script>
 <script type="text/javascript">
   var myFullpage = new fullpage('#fullpage', {
         scrollBar: true
       });
-</script> --}}
+</script>
 </body>
 
 </html>
