@@ -14,7 +14,7 @@ class HirePageController extends Controller
      */
     public function index()
     {
-        $hire_page = HirePage::select('id', 'partner_name','email', 'project_name', 'describe_project', 'service_id', 'budget', 'delete_status','created_at', 'updated_at')->orderBy('created_at','desc')->paginate(15);
+        $hire_page = HirePage::select('id', 'partner_name','email', 'phone', 'service_id', 'budget', 'delete_status','created_at', 'updated_at')->orderBy('created_at','desc')->paginate(15);
         return view('admin.hire_page.list', compact('hire_page'));
     }
 

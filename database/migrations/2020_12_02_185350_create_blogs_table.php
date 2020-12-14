@@ -21,6 +21,7 @@ class CreateBlogsTable extends Migration
             $table->string('thumbnail');
             $table->string('content');
             $table->tinyInteger('author_id');
+            $table->tinyInteger('status')->default(1);
             $table->boolean('delete_status',1)->default(1);
             $table->timestamps();
         });

@@ -4,16 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/range.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/fullpage.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="{{asset('css/reset.css')}}">
+  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('css/range.css')}}">
+  <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/fullpage.css')}}">
+  <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+  <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   <link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
   <!-- full page -->
@@ -38,8 +40,9 @@
           </div>
           <div class="left-menu d-flex justify-content-between">
             <div class="search d-none d-sm-block">
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="form-inline my-2 my-lg-0" method="post" action="/p/search">
+                @csrf
+                <input class="form-control mr-sm-2" name="key" placeholder="Search" aria-label="Search">
                 <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
               </form>
             </div>
@@ -134,8 +137,6 @@
         </div>
       </div>
       <div class="tab-menu" id="list-menutab">
-        <p class="text-center">
-        </p>
         <ul>
           <li><a href="">ABOUT</a></li>
           <li><a href="">CONTACT US</a></li>
@@ -215,7 +216,7 @@
       @endif
       @endforeach
       @endif
-      <img class="about-bg d-block d-sm-none" src="/img/mobile/page-3.png" alt="">
+      <img class="about-bg d-block d-sm-none" src="{{asset('/img/mobile/page-3.png')}}" alt="">
       <div class="content-client">
         <div class="row">
           <div class="col-lg-3">
@@ -244,7 +245,7 @@
                     <div class="img-brand">
                       <img src="{{asset('/storage/img/'.$c->image)}}" class="img-fluid" alt="">
                     </div>
-                    <p class="title-brand">{{$c->customer_name}}</p>
+                    <p class="title-brand text-center">{{$c->customer_name}}</p>
                   </a>
                 </div>
                 @endforeach
@@ -452,7 +453,7 @@
           we are creatives, so it might be about bananas and stuff
         </p>
         <div class="view-more d-flex justify-content-end mb-2">
-          <a href="#" class="text-dark d-none d-sm-block"><span>View more</span>
+          <a href="/all-post" class="text-dark d-none d-sm-block"><span>View more</span>
             <img src="{{asset('/img/arrow-right.png')}}" class="arrow-right" alt="">
           </a>
         </div>
@@ -463,10 +464,10 @@
             <div class="item">
               <div class="col-lg-12">
                 <div class="one-article">
-                  <a href="#" class="thumb-article">
+                  <a href="/post/{{$b->slug}}" class="thumb-article">
                     <img src="{{asset('/storage/img/'.$b->thumbnail)}}" alt="">
                   </a>
-                  <a href="#">
+                  <a href="/post/{{$b->slug}}">
                     <h3 class="title-post">{{$b->title}}</h3>
                   </a>
                   <div class="article-info">
@@ -534,14 +535,11 @@
               <div class="col-lg-6">
                 <div class="about-left text-center text-white p1">
                   <div class="col-lg-8 offset-lg-2">
-                    <h3 class="text-center">WHAT'S THE OCCASION ?</h3>
-                    <div class="text-right d-none d-sm-none d-lg-block">
-                      <small class="text-right">Tiktok, Choose wisely</small>
-                    </div>
-                    <div class="page-section pt-5 d-none d-sm-none d-lg-block">
-                      <p>0.6</p>
-                      <p>HERE WE ARE</p>
-                      <P>let's work together</P>
+                   
+                    <div class="page-section">
+                     
+                      <p>Here we are</p>
+                      <small>let's work together</small>
                     </div>
                   </div>
 
@@ -573,8 +571,8 @@
                   <div class="d-none d-sm-none d-lg-block col-lg-6">
                     <div class="about-left text-center text-white p1">
                       <div class="col-lg-8 offset-lg-2">
-                        <h3 class="text-center pb-3">HIRE US</h3>
-                        <button type="submit" class="btn btn-outline-light mt-5 btn-send" id="hius"><i
+                        <h3 class="text-center pb-3">Hire us</h3>
+                        <button type="submit" class="btn btn-outline-light btn-send" id="hius"><i
                             class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                       </div>
                     </div>
@@ -601,14 +599,8 @@
                         <span class="error-form"></span>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">WHAT'S THE NAME OF YOUR PROJECT?</label>
-                        <input type="text" name="project_name" class="form-control" id="exampleInputEmail1"
-                          aria-describedby="emailHelp">
-                        <span class="error-form"></span>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">TELL US A BIT ABOUT YOUR PROJECT.</label>
-                        <input type="text" name="describe_project" class="form-control" id="exampleInputEmail1"
+                        <label for="exampleInputEmail1">WHAT'S YOUR PHONE NUMBER?</label>
+                        <input type="text" name="phone" class="form-control" id="exampleInputEmail1"
                           aria-describedby="emailHelp">
                         <span class="error-form"></span>
                       </div>
@@ -656,22 +648,23 @@
         </div>
         <!-- Section three -->
         <div class="section-three tab-content" id="tab3">
-          <form action="/add_candidate" id="form2" method="post" enctype='multipart/form-data'>
+          <form action="/add_candidate" id="form2" method="post" enctype="multipart/form-data">
+            @method('post')
             @csrf
             <div class="container">
               <div class="row">
-                <div class="col-lg-12 d-none d-sm-block">
+                <div class="col-12 col-sm-6 d-none d-sm-block">
                   <div class="about-left text-center text-white p1">
                     <div class="col-lg-8 offset-lg-2">
                       <h3 class="text-center pb-3">Be part of
                         our team</h3>
-                      <button type="submit" id="team" class="btn btn-outline-light mt-5 btn-send"><i
+                      <button type="submit" id="team" class="btn btn-outline-light btn-send"><i
                           class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                     </div>
 
                   </div>
                 </div>
-                <div class="col-lg-12 d-flex flex-column">
+                <div class="col-12 col-sm-6 d-flex flex-column">
                   <ul id="tabs-nav" class="arrow p-0">
                     <li class="arrow-1">
                       <a href="#tab1">
@@ -694,14 +687,8 @@
                       <span class="error-form"></span>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">WHAT'S THE NAME OF YOUR PROJECT?</label>
+                      <label for="exampleInputEmail1">WHAT'S YOUR PHONE NUMBER?</label>
                       <input type="text" name="project_name" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp">
-                      <span class="error-form"></span>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">TELL US A BIT ABOUT YOUR PROJECT.</label>
-                      <input type="text" name="introduce" class="form-control" id="exampleInputEmail1"
                         aria-describedby="emailHelp">
                       <span class="error-form"></span>
                     </div>
@@ -751,7 +738,7 @@
                   <div class="about-left text-center text-white p1">
                     <div class="col-lg-8 offset-lg-2">
                       <h3 class="text-center pb-3">Something else</h3>
-                      <button id="something" class="btn btn-outline-light mt-5 btn-send" name="btn_fb"><i
+                      <button id="something" class="btn btn-outline-light btn-send" name="btn_fb"><i
                           class="fa fa-paper-plane pr-1" aria-hidden="true"></i>Send Us</button>
                     </div>
                   </div>
@@ -798,7 +785,7 @@
         <div class="scroll-div d-none d-sm-block">
           <div class="scroll-to d-flex justify-content-between text-white">
             <a href="#article" class="fa fa-long-arrow-left text-white" aria-hidden="true"></a>
-            <span>CONTACT US</span>
+            <span>CONNECT</span>
             <a href="#footer" class="fa fa-long-arrow-right text-white" aria-hidden="true"></a>
           </div>
         </div>
@@ -930,12 +917,12 @@
   window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
 </script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/1.js"></script>
-<script src="js/select.js"></script>
-<script src="js/owl.carousel.js"></script>
+<script src="{{asset('js/main.js')}}"></script>
+<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/1.js')}}"></script>
+<script src="{{asset('js/select.js')}}"></script>
+<script src="{{asset('js/owl.carousel.js')}}"></script>
 <!-- Full page -->
 <script src="js/fullpage.js"></script>
 <script type="text/javascript">

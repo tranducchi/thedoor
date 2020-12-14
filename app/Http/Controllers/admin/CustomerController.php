@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Product;
@@ -151,17 +151,21 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dept = Customer::find($id);
+        $dept->delete_status =0;
+        Storage::disk('public')->delete("img/" . $dept->image);
+        $dept->save();
+        return redirect('admin/customer')->with('success', 'Xóa thành công !');
     }
     public function delete(Request $request){
         if($request->id ==null){
-            return redirect('/admin/service');
+            return redirect('/admin/customer');
         }
         $id = $request->id;
         Customer::whereIn('id', $id)->update([
             'delete_status'=>'0'
         ]);
-        return redirect('/admin/service')->with('success', 'Xóa thành công !');
+        return redirect('/admin/customer')->with('success', 'Xóa thành công !');
     }
     public function showProduct($id){
         $title = Customer::select('customer_name','id')->where('id', $id)->where('delete_status',1)->get();

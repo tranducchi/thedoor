@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Dept;
 use App\Models\Staff;
@@ -164,6 +164,7 @@ class StaffController extends Controller
     {
         $staff = Staff::find($id);
         $staff->delete_status =0;
+        Storage::disk('public')->delete("img/" . $staff->photo);
         $staff->save();
         return redirect('/admin/staff')->with('success', 'Xóa thành công !');
     }

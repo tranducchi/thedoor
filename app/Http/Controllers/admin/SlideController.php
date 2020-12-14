@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Slide;
@@ -152,11 +152,10 @@ class SlideController extends Controller
      */
     public function destroy($id)
     {
-        if($request->id ==null){
-            return redirect('/admin/slide');
-        }
         $slide = Slide::find($id);
         $slide->delete_status =0;
+        
+        Storage::disk('public')->delete("img/" . $slide->image);
         $slide->save();
         return redirect('/admin/slide')->with('success', 'Xóa thành công !');
     }

@@ -8,7 +8,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tên khách hàng :  </label>
-                    <input type="text" name="name" class="form-control" placeholder="Tên nhân viên">
+                    <input type="text" name="name" class="form-control" placeholder="Tên khách hàng">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Số điện thoại : </label>

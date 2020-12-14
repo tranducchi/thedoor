@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Layout;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class LayoutController extends Controller
 {
     /**
@@ -125,6 +125,7 @@ class LayoutController extends Controller
         $dept = Layout::find($id);
         $dept->delete_status =0;
         $dept->save();
+        Storage::disk('public')->delete("img/" . $dept->link);
         return redirect('admin/layout')->with('success', 'Xóa thành công !');
     }
     public function delete(Request $request){
@@ -132,6 +133,7 @@ class LayoutController extends Controller
             return redirect('/admin/layout');
         }
         $id = $request->id;
+        
         Layout::whereIn('id', $id)->update([
             'delete_status'=>'0'
         ]);

@@ -7,6 +7,7 @@
             </a>
             <div class="sb-sidenav-menu-heading">Thành phần trang</div>
             <!-- Slide -->
+            @if(Auth::user()->type ==1)
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                 aria-expanded="false" aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
@@ -19,32 +20,43 @@
                     <a class="nav-link" href="/admin/slide">Danh sách</a>
                 </nav>
             </div>
-               <!-- Slide -->
-               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#theme"
-               aria-expanded="false" aria-controls="collapseLayouts">
-               <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-               Giao diện
-               <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-           </a>
-           <div class="collapse" id="theme" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-               <nav class="sb-sidenav-menu-nested nav">
-                   <a class="nav-link" href="/admin/layout/create">Thêm mới</a>
-                   <a class="nav-link" href="/admin/layout">Danh sách</a>
-               </nav>
-           </div>
-              <!-- Slide -->
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#blog"
-              aria-expanded="false" aria-controls="collapseLayouts">
-              <div class="sb-nav-link-icon"><i class="far fa-edit"></i></div>
-              Blog
-              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-          </a>
-          <div class="collapse" id="blog" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="/admin/blog/create">Thêm mới</a>
-                  <a class="nav-link" href="/admin/blog">Danh sách</a>
-              </nav>
-          </div>
+            <!-- Slide -->
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#theme" aria-expanded="false"
+                aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Giao diện
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+
+            <div class="collapse" id="theme" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="/admin/layout/create">Thêm mới</a>
+                    <a class="nav-link" href="/admin/layout">Danh sách</a>
+                </nav>
+            </div>
+            @endif
+            <!-- Slide -->
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#blog" aria-expanded="false"
+                aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="far fa-edit"></i></div>
+                Blog
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="blog" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="/admin/blog/create">Thêm mới</a>
+                    <a class="nav-link" href="/admin/blog">Danh sách</a>
+                    @if (Auth::user()->type ==1)
+                        <a class="nav-link" href="/admin/blog/status/view">Đang xử lý (
+                            {{$s_blog}}
+                        )</a>
+                    @endif
+                  
+                </nav>
+            </div>
+            @if (Auth::user()->type ==1)
+
+
             <!-- Bo phan -->
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#dept" aria-expanded="false"
                 aria-controls="collapseLayouts">
@@ -127,8 +139,8 @@
                 </nav>
             </div>
             {{-- User--}}
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#user"
-                aria-expanded="false" aria-controls="collapsePages">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#user" aria-expanded="false"
+                aria-controls="collapsePages">
                 <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
                 Tài khoản
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -143,18 +155,22 @@
                     </a>
                 </nav>
             </div>
+            @endif
             {{-- Yêu cầu--}}
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#request"
-                aria-expanded="false" aria-controls="collapsePages">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#request" aria-expanded="false"
+                aria-controls="collapsePages">
                 <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>
                 Yêu cầu
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="request" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
+                <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link" href="/admin/hire_page">Liên hệ</a>
-                    <a class="nav-link" href="/admin/candidate">Trở thành cộng sự</a>          
-                    <a class="nav-link" href="/admin/feed_back">Phản hồi</a>      
+                    @if (Auth::user()->type ==1)
+                    <a class="nav-link" href="/admin/candidate">Trở thành cộng sự</a>
+                    @endif
+                    
+                    <a class="nav-link" href="/admin/feed_back">Phản hồi</a>
                 </nav>
             </div>
         </div>

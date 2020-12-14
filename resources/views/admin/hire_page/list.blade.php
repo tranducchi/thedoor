@@ -21,11 +21,10 @@
                         <th scope="col">#</th>
                         <th scope="col">Tên</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Dự án</th>
-                        <th scope="col">Mô tả dự án</th>
+                        <th scope="col">Điện thoại</th>
                         <th scope="col">Dịch vụ</th>
                         <th scope="col">Giá tiền</th>
-                        <th scope="col">Thời gian tạo</th>
+                        <th scope="col">Ngày gửi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,11 +38,11 @@
                             <th scope="row">{{$i}}</th>
                             <td>{{$h->partner_name}}</td>
                             <td>{{$h->email}}</td>
-                            <td>{{$h->project_name}}</td>
-                            <td>{{$h->describe_project}}</td>
-                            <td>{{$h->service_id}}</td>
-                            <td>{{$h->budget}},000,000 VNĐ</td>
-                            <td>{{$h->created_at}}</td>
+                            <td>{{$h->phone}}</td>
+                            
+                            <td>{{$h->service->service_name}}</td>
+                            <td>{{number_format($h->budget)}} VNĐ</td>
+                            <td>{{$h->created_at->format('d/m/yy')}}</td>
                             @method('delete')
                                     @csrf
                         </tr>

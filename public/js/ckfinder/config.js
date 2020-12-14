@@ -6,7 +6,6 @@
 var config = {
     resize_enabled = true
 };
-
 // Set your configuration options below.
 
 // Examples:

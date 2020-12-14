@@ -30,10 +30,6 @@ $(document).ready(function () {
         // Parameters has to be in square bracket '[]'
         owl.trigger('prev.owl.carousel', [300]);
     })
-    $('#mobile-hius').on('click', function(e){
-        e.preventDefault();
-        console.log('hello');
-    });
     // BUtton hi us
     $('#hius').on('click', function(e){
         e.preventDefault()
@@ -116,7 +112,60 @@ $(document).ready(function () {
         });
     });
     // end something
-   
+    //button mobile
+    $('#mobile-hius').on('click', function(e){
+        console.log("clicked");
+        e.preventDefault()
+        $.ajax({
+            // header:{
+            //     'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            // },
+            url: 'add_hire',
+            data: new FormData($("#form1 form")[0]),
+            contentType: false,
+            processData: false,
+            method: 'post',
+            success: function(data) {
+                toastr.success(data.success)
+                $('#form1 form')[0].reset();
+            },
+            error: function(error) {
+                console.log(error);
+                var errors = error.responseJSON;
+                $.each(errors.errors, function(i, val) {
+                    $("#form1 input[name=" + i + "]").siblings('.error-form').text(val[0]);
+                  
+                })
+            }
+        });
+    });
+    $('#mobile-something').on('click', function(e){
+        e.preventDefault()
+        $.ajax({
+
+            header:{
+                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            },
+            url: 'add_somethingelse',
+            data: new FormData($("#form3")[0]),
+            contentType: false,
+            processData: false,
+            method: 'post',
+            success: function(data) {
+                toastr.success(data.success)
+                $('#form3')[0].reset();
+            },
+            error: function(error) {
+                console.log(error);
+                var errors = error.responseJSON;
+                $.each(errors.errors, function(i, val) {
+                    $("#form3 input[name=" + i + "]").siblings('.error-form').text(val[0]);
+                    $("#form3 textarea").siblings('.error-form').text(val[0]);
+                  
+                })
+            }
+        });
+    });
     $('.three-owl').owlCarousel({
         loop: true,
         margin: 10,

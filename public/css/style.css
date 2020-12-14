@@ -3,18 +3,27 @@
     margin: 0;
 }
 
+.page-section small {
+    font-size: 22px;
+}
+
 .border-bottom {
     border-bottom: 2px solid black !important;
 }
-
+button{
+    font-family: 'Josefin Sans', sans-serif!important;
+}
 .this-spot .navi-btn {
     margin-top: 10%;
 }
 
 span.error-form {
     color: yellow;
+    font-size: 13px;
 }
-
+.slidecontainer p{
+    margin: 0;
+}
 button:focus {
     outline: 0;
 }
@@ -26,7 +35,9 @@ button:focus {
 .owl-dots {
     display: none;
 }
-
+.page-section p{
+    font-size: 35px;
+}
 a.this-spot {
     text-decoration: none;
 }
@@ -136,7 +147,7 @@ ul#tabs-nav li a.atab::before {
 }
 
 body {
-    font-family: Montserrat-Light !important;
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 
@@ -175,6 +186,7 @@ ul.nav.select-section.d-flex.flex-column a {
     border-bottom: 1px solid white;
     border-radius: 0;
     color: white;
+    padding: 0;
 }
 
 .form-group label {
@@ -187,7 +199,7 @@ input.form-check-input {
     transform: scale(2);
 }
 
-.section-two input.form-check-input {
+input.form-check-input {
     transform: scale(1.5);
     margin-top: 4px;
 }
@@ -200,7 +212,7 @@ input.form-check-input {
     font-size: 15px;
 }
 
-button.btn.btn-outline-light.mt-5.btn-send {
+button.btn.btn-outline-light.btn-send {
     padding: 7px 30px;
     border-radius: 21px;
 }
@@ -231,7 +243,8 @@ label.form-check-label {
 
 .about-left h3 {
     font-size: 40px;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight:500;
 }
 
 #about-us .section-one,
@@ -311,7 +324,8 @@ h4 {
 
 .content-slide h2 {
     font-size: 58px;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
 }
 
 @font-face {
@@ -320,7 +334,8 @@ h4 {
 }
 
 @font-face {
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
     src: url('../fonts/Montserrat-ExtraBold.otf');
 }
 
@@ -328,7 +343,7 @@ h4 {
     height: 100px;
     width: 100%;
     line-height: 100px;
-    z-index: 4;
+    z-index: 3;
 }
 
 .logo {
@@ -338,7 +353,8 @@ h4 {
 }
 
 .logo h3 {
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
     color: white;
     opacity: 0;
     transition: 0.6s;
@@ -419,11 +435,11 @@ header#header {
     right: -175%;
     top: 0;
     height: 100%;
-    z-index: 3;
+    z-index: 2;
     width: 541px;
     background-color: black;
     margin-left: 300px;
-    padding-top: 42px;
+    padding-top: 65px;
     transition: 0.2s ease-in-out 0.1s;
 }
 
@@ -460,7 +476,8 @@ header#header {
 
 .tab-menu ul li:hover a {
     color: black;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
 }
 
 .tab-menu ul li:hover a::after {
@@ -604,7 +621,7 @@ a.on_top {
     right: 4%;
     width: 50%;
     top: 14%;
-    z-index: 2;
+    z-index: 1;
 }
 
 .slider::-webkit-slider-thumb {
@@ -706,7 +723,8 @@ a.on_top {
 
 .what-left h3 {
     font-size: 29px;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
 }
 
 .brand-box {
@@ -731,7 +749,8 @@ a.on_top {
 
 .info-box p.offset {
     font-size: 40px;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
     margin: 0 !important;
 }
 
@@ -845,7 +864,8 @@ p.title-brand {
 
 .one-article h3.title-post {
     color: #484852;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
     text-transform: uppercase;
 }
 
@@ -858,7 +878,8 @@ p.title-brand {
 
 .main-article h3.article-title {
     padding-top: 40px;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
 }
 
 img.arrow-right {
@@ -885,7 +906,8 @@ img.bg-article {
 /* end code article  */
 /* code footer */
 .title-footer h3 {
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
     font-size: 40px;
     margin-top: 0;
     padding-top: 40px;
@@ -931,7 +953,8 @@ ul.footer-social li i {
 
 h3.tit {
     font-size: 30px !important;
-    font-family: Montserrat-Bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
 }
 
 h3.tit span {
@@ -996,7 +1019,7 @@ h3.tit span {
     }
 
     .thum-logo {
-        width: 39px;
+        width: 31px;
         margin-left: 11px;
     }
 
@@ -1007,13 +1030,12 @@ h3.tit span {
     }
 
     .menu {
-        height: 64px !important;
-        line-height: 64px !important;
-
+        height: 47px !important;
+        line-height: 47px !important;
     }
 
     .menu-button {
-        margin-top: 11px !important;
+        margin-top: 1px !important;
         padding-right: 9px;
         transform: scale(0.8);
     }
@@ -1045,7 +1067,8 @@ h3.tit span {
     }
 
     .content-carousel-m h3 {
-        font-family: Montserrat-Bold;
+        font-family: 'Josefin Sans', sans-serif;
+font-weight:500;
         font-size: 18px !important;
     }
 
@@ -1224,4 +1247,39 @@ h3.tit span {
     .section-two input.form-check-input{
         margin-top: 0;
     }
+    .page-section p {
+        font-size: 17px!important;
+    }
 }
+/* list post */
+.thum-post {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.one-post{
+    margin-bottom: 3%;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 3%;
+}
+.one-post:last-child{
+    border: none;
+}
+h3.tit-ar{
+    margin-top: 0;
+}
+h3.tit-ar a{
+    font-size: 25px;
+   
+    color: #5A6268;
+    text-decoration: none;
+}
+u.result{
+    font-size: 20px;
+}
+div#detail-content {
+    margin-top: 12%;
+    overflow: hidden;
+}
+
+

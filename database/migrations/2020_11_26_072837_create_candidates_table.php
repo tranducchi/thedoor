@@ -17,8 +17,7 @@ class CreateCandidatesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('project_name');
-            $table->text('introduce');
+            $table->string('phone');
             $table->unsignedBigInteger('dept_id');
             $table->foreign('dept_id')->references('id')->on('depts')->onDelete('cascade');
             $table->string('profile');

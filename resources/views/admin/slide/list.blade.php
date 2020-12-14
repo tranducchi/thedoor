@@ -48,8 +48,8 @@
                             <td><a href="/admin/slide/{{$s->id}}/edit" class="ml-2"><i
                                         class="fas fa-pencil-alt"></i></a></td>
                             <td>
-                                <form action="{{ url('/admin/slide', ['id'=>$s->id]) }}" method="post">
-                                    <button type="submit" class="btn btn-danger btn-sm"
+                                <form method="post">
+                                    <button formaction="{{ url('/admin/slide', ['id'=>$s->id]) }}" type="submit" class="btn btn-danger btn-sm"
                                             onclick="return confirm('Xoá slide ? ');"><i
                                             class="fa fa-times"></i></button>
                                     @method('delete')
@@ -68,29 +68,3 @@
         </div>
     </div>
 @stop
-@section('script')
-    <script type="text/javascript">
-        $("#slide-add").click(function(e){
-            e.preventDefault();
-            $.ajax({
-            url: '/admin/slide',
-            data: new FormData($("form#slide")[0]),
-            contentType: false,
-            processData: false,
-            method: "POST",
-            }).done(function (data) {
-                $('.slide').modal('hide');
-                toastr.success('', 'Thêm mới thành công');
-                $output = '';
-               
-                
-            }).fail(function (data) {
-                $(".error-form").show();
-                $.each(errors.errors, function (i, val) {
-                    $("#slide").find("input[name=" + i + "]").siblings('.error-form').text(val[0])
-                    $("#slide").find("textarea[name=" + i + "]").siblings('.error-form').text(val[0])
-                });
-            });
-        });
-    </script>   
-@endsection

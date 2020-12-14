@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
@@ -15,7 +16,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::select('id', 'title', 'thumbnail', 'describe', 'delete_status', 'content', 'author_id', 'created_at')->where('delete_status',1)->orderBy('created_at', 'desc')->paginate(15);
+        $blogs = Blog::select('id', 'title', 'thumbnail', 'describe', 'delete_status', 'content', 'author_id', 'created_at')->where('delete_status',1)->where('status',1)->orderBy('updated_at', 'desc')->paginate(15);
         return view('admin.blog.list', compact('blogs'));
     }
 
@@ -68,6 +69,9 @@ class BlogController extends Controller
         $blog->thumbnail = $fileNameToStore;
         $blog->content = $request->content;
         $blog->author_id = $request->author;
+        if(Auth::user()->type !==1){
+            $blog->status =0;
+        }
         $blog->save();
         return redirect('/admin/blog')->with('success', 'Thêm thành công !');
     }
@@ -80,7 +84,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('admin.blog.show', compact('blog'));
     }
 
     /**
@@ -148,11 +153,18 @@ class BlogController extends Controller
         $dept = Blog::find($id);
         $dept->delete_status =0;
         $dept->save();
+        Storage::disk('public')->delete("img/" . $dept->thumbnail);
         return redirect('admin/blog')->with('success', 'Xóa thành công !');
     }
     public function search(Request $request){
         $k = $request->input('key');
-        $blogs = Blog::where('title','LIKE','%'.$k.'%')->where('delete_status',1)->paginate(15);
+        $id = Auth::user()->id;
+        if($id==1){
+            $blogs = Blog::where('title','LIKE','%'.$k.'%')->where('delete_status',1)->where('status', 1)->paginate(15);
+        }else{
+            $blogs = Blog::where('title','LIKE','%'.$k.'%')->where('delete_status',1)->where('status', 1)->where('author_id', $id)->paginate(15);
+        }
+        
         return view('admin.blog.search', compact('blogs', 'k'));
     }
     public function delete(Request $request){
@@ -164,5 +176,27 @@ class BlogController extends Controller
             'delete_status'=>'0'
         ]);
         return redirect('/admin/blog')->with('success', 'Xóa thành công !');
+    }
+    public function status(){
+        $blogs = Blog::select('id', 'author_id', 'title', 'describe', 'thumbnail', 'created_at')->where('delete_status',1)->where('status',0)->orderBy('created_at', 'desc')->paginate(15);
+        return view('admin.blog.status', compact('blogs'));
+    }
+    public function accept(Request $request, $id){
+        $blog = Blog::find($id);
+        $blog->status =1;
+        $blog->save();
+        return redirect('/admin/blog')->with('success', 'Duyệt bài viết');
+    }
+    public function multiAccept(Request $request){
+        if($request->id == null){
+            return redirect('admin/blog/status/view');
+        }else{
+            $id = $request->id;
+            Blog::whereIn('id', $id)->update([
+                'status'=>'1'
+            ]);
+            return redirect('admin/blog')->with('success', 'Duyệt bài thành công !');
+        }
+        
     }
 }

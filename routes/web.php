@@ -18,6 +18,10 @@ use App\Http\Controllers\admin\AdminController;
 // });
 
 Route::get('/',[FontendController::class, 'index']);
+Route::post('/p/search',[FontendController::class, 'search']);
+Route::get('/post/{slug}',[FontendController::class, 'viewPost']);
+Route::get('/all-post', [FontendController::class, 'getPost']);
+Route::get('/article',[FontendController::class, 'listPost']);
 Route::post('/add_somethingelse',[FontendController::class, 'add_ste']);
 Route::post('/add_hire',[FontendController::class, 'add_hire']);
 Route::post('/add_candidate',[FontendController::class, 'add_candidate']);
@@ -25,23 +29,31 @@ Route::group(['prefix'=>'admin', 'middleware'=> 'auth' ],function () {
 
     Route::group(['namespace' => 'App\Http\Controllers\admin'], function () {
         Route::get('/',[AdminController::class,'index']);
-        Route::resource('slide', 'SlideController');
-        Route::resource('dept','DeptController');
-        Route::resource('staff','StaffController');
-        Route::resource('service','ServiceController');
-        Route::resource('customer','CustomerController');
-        Route::resource('feed_back','FeedBackController');
+        Route::group(['middleware'=>'type'], function(){
+                Route::resource('slide', 'SlideController');
+                Route::resource('dept','DeptController');
+                Route::resource('staff','StaffController');
+                Route::resource('service','ServiceController');
+                Route::resource('customer','CustomerController');
+                
+                Route::resource('candidate','CandidateController');
+                Route::resource('layout','LayoutController');
+        });
         Route::resource('user','UserController');
+        Route::resource('feed_back','FeedBackController');
+        
         Route::resource('blog','BlogController');
         Route::resource('hire_page','HirePageController');
-        Route::resource('candidate','CandidateController');
-        Route::resource('layout','LayoutController');
+        
 //        hien thi san pham cua 1 khach hang
         Route::get('/list-products/{id}', 'CustomerController@showProduct');
         Route::resource('detail','DetailController');
         Route::resource('product','ProductController');
         Route::post('/dept/search', 'DeptController@search');
         Route::post('/blog/search', 'BlogController@search');
+        Route::get('/blog/status/view', 'BlogController@status');
+        Route::post('bl/{id}', 'BlogController@accept');
+        Route::post('bls/multi', 'BlogController@multiAccept');
 //        View by product
         Route::get('/view-product/{id}', 'DetailController@byProduct');
         //view customer

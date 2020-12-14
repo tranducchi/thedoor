@@ -17,11 +17,10 @@ class CreateHirePagesTable extends Migration
             $table->id();
             $table->string('partner_name');
             $table->string('email');
-            $table->string('project_name');
-            $table->string('describe_project');
+            $table->string('phone');
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
-            $table->integer('budget');
+            $table->string('budget');
             $table->boolean('delete_status')->default(1);
             $table->timestamps();
         });

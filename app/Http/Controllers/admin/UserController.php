@@ -39,10 +39,11 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'password' => 'required|confirmed|min:6',
          
         ],[
+            'email.unique'=>'Tên tài khoản đã tồn tại',
             'name.required'=>'Trường tên không được để trống',
             'email.required'=>'Trường điện thoại không được để trống',
             'password.required'=>'Mật khẩu không được để trống',
@@ -94,6 +95,7 @@ class UserController extends Controller
             'email' => 'required',
          
         ],[
+            
             'name.required'=>'Trường tên không được để trống',
             'email.required'=>'Trường điện thoại không được để trống',
         ]);
