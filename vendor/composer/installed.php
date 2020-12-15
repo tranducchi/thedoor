@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '880861a629acec0f98ea4e61c16de16d99d3f434',
+    'reference' => '4e433a41df4cdc0c168d5c5ecf136c2e68dcef9b',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -467,6 +467,15 @@
         0 => 'v8.16.1',
       ),
     ),
+    'infureal/artisan-gui' => 
+    array (
+      'pretty_version' => '1.4.1',
+      'version' => '1.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7ae11c809868197abe63718ed0a673b7607de5aa',
+    ),
     'jaybizzle/crawler-detect' => 
     array (
       'pretty_version' => 'v1.2.103',
@@ -526,7 +535,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '880861a629acec0f98ea4e61c16de16d99d3f434',
+      'reference' => '4e433a41df4cdc0c168d5c5ecf136c2e68dcef9b',
     ),
     'laravel/sanctum' => 
     array (

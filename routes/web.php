@@ -16,6 +16,13 @@ use App\Http\Controllers\admin\AdminController;
 // Route::get('/', function () {
 //     return view('home');
 // });
+use Illuminate\Support\Facades\File;
+
+Route::get('/test', function(){
+        return File::link(
+                storage_path('app/public'), public_path('storage')
+        );
+});
 
 Route::get('/',[FontendController::class, 'index']);
 Route::post('/p/search',[FontendController::class, 'search']);

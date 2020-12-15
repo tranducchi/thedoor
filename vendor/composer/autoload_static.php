@@ -148,6 +148,7 @@ class ComposerStaticInit209f8339982918845174d80d7aaffcd4
         ),
         'I' => 
         array (
+            'Infureal\\' => 9,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\' => 11,
         ),
@@ -469,6 +470,10 @@ class ComposerStaticInit209f8339982918845174d80d7aaffcd4
         'Jaybizzle\\CrawlerDetect\\' => 
         array (
             0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
+        ),
+        'Infureal\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infureal/artisan-gui/src',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -3566,6 +3571,13 @@ class ComposerStaticInit209f8339982918845174d80d7aaffcd4
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Infureal\\Http\\Controllers\\GuiController' => __DIR__ . '/..' . '/infureal/artisan-gui/src/Http/Controllers/GuiController.php',
+        'Infureal\\Providers\\GuiServiceProvider' => __DIR__ . '/..' . '/infureal/artisan-gui/src/Providers/GuiServiceProvider.php',
+        'Infureal\\View\\Components\\Command' => __DIR__ . '/..' . '/infureal/artisan-gui/src/View/Components/Command.php',
+        'Infureal\\View\\Components\\Command\\Checkbox' => __DIR__ . '/..' . '/infureal/artisan-gui/src/View/Components/Command/Checkbox.php',
+        'Infureal\\View\\Components\\Command\\Input' => __DIR__ . '/..' . '/infureal/artisan-gui/src/View/Components/Command/Input.php',
+        'Infureal\\View\\Components\\Group' => __DIR__ . '/..' . '/infureal/artisan-gui/src/View/Components/Group.php',
+        'Infureal\\View\\Components\\Header' => __DIR__ . '/..' . '/infureal/artisan-gui/src/View/Components/Header.php',
         'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
         'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
         'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',
